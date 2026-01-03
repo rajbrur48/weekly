@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BKB Feni Report Replica</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            font-size: 11px; /* Matching the dense data look */
+        }
+
+        .page-container {
+            background-color: white;
+            width: 100%;
+            max-width: 1400px; /* Wide format for landscape */
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .header-center {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .bank-logo {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 5px;
+        }
+
+        .header-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #006400; /* Dark Green for BKB */
+            margin: 0;
+        }
+
+        .header-subtitle {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 2px 0;
+        }
+
+        .header-meta {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Top Right Summary Table */
+        .summary-table {
+            border-collapse: collapse;
+            font-size: 10px;
+            width: 400px;
+        }
+        .summary-table th, .summary-table td {
+            border: 1px solid black;
+            padding: 2px 4px;
+            text-align: center;
+        }
+        .summary-table th {
+            background-color: #fff;
+            font-weight: bold;
+        }
+
+        /* Main Data Table */
+        .main-table-wrapper {
+            overflow-x: auto;
+        }
+
+        table.main-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+            font-size: 10px;
+        }
+
+        table.main-table th, table.main-table td {
+            border: 1px solid black;
+            padding: 3px 2px;
+            text-align: center;
+        }
+
+        /* Header Styling */
+        table.main-table thead th {
+            background-color: #ffffff;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+
+        /* Column specific formatting */
+        .col-branch { text-align: left !important; padding-left: 5px !important; white-space: nowrap; font-weight: 600; }
+        .col-num { text-align: right !important; padding-right: 4px !important; }
+        .red-text { color: red; }
+        
+        /* Row heights */
+        tr { height: 22px; }
+
+        /* Alternating rows or hover for readability (optional, keeping clean for replica) */
+        /* table.main-table tr:nth-child(even) { background-color: #f9f9f9; } */
+
+        /* Footer */
+        .footer-section {
+            margin-top: 20px;
+            font-size: 12px;
+        }
+        .footer-lines {
+            line-height: 1.6;
+        }
+        
+        /* Print adjustments */
+        @media print {
+            body { background: none; padding: 0; }
+            .page-container { box-shadow: none; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+    <header>
+        <div style="width: 100px;"></div> 
+
+        <div class="header-center">
+            <img src="https://seeklogo.com/images/B/bangladesh-krishi-bank-logo-66100E2BD3-seeklogo.com.png" alt="Logo" class="bank-logo">
+            <h1 class="header-title">বাংলাদেশ কৃষি ব্যাংক</h1>
+            <div class="header-subtitle">মুখ্য আঞ্চলিক কার্যালয়, ফেনী</div>
+            <div class="header-meta">সপ্তাহ নং - ২৫ তম</div>
+            <div class="header-meta">তারিখ- ১৮.১২.২০২৫ ইং</div>
+        </div>
+
+        <div class="header-right">
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>খাত</th>
+                        <th>লক্ষ্যমাত্রা</th>
+                        <th>অর্জন</th>
+                        <th>হার</th>
+                        <th>আনুপাতিক লক্ষ্যমাত্রা</th>
+                        <th>অর্জন</th>
+                        <th>হার</th>
+                        <th>মন্তব্য</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:left;">আমানত সংগ্রহ</td>
+                        <td>১৩১২০.০০</td>
+                        <td>৩৪৭২.২৫</td>
+                        <td>২৬%</td>
+                        <td>৬৩০৭.৬৯</td>
+                        <td>৩৪৭২.২৫</td>
+                        <td>৫৫%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">ঋণ বিতরণ</td>
+                        <td>৩০০০০.০০</td>
+                        <td>১০৬৯০.৫৯</td>
+                        <td>৩৫%</td>
+                        <td>১৪৪২৩.০৮</td>
+                        <td>১০৬৯০.৫৯</td>
+                        <td>৭২%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">ঋণ আদায়</td>
+                        <td>২০৬৪.১০</td>
+                        <td>৯৯৭.৮৯</td>
+                        <td>৪৯%</td>
+                        <td>৯৯৪.২৮</td>
+                        <td>৯৯৭.৮৯</td>
+                        <td>১০০%</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </header>
+
+    <div class="main-table-wrapper">
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">ক্রঃ নং</th>
+                    <th rowspan="2" style="min-width: 100px;">শাখার নাম</th>
+                    <th colspan="8">আমানত সংগ্রহ</th>
+                    <th colspan="3">আমানত স্থিতি অর্জন</th>
+                    <th colspan="3">নতুন আমানত হিসাব খোলা(সঞ্চয়ী ও এসএনডি)</th>
+                    <th colspan="3">৬ টি আকর্ষণীয় স্কীম</th>
+                    <th colspan="6">ঋণ বিতরণ</th>
+                    <th colspan="3">নতুন ঋণ গ্রহীতার সংখ্যা</th>
+                    <th colspan="6">ঋণ আদায়</th>
+                </tr>
+                <tr>
+                    <th>জুন/২৫ স্থিতি</th>
+                    <th>লক্ষ্যমাত্রা</th>
+                    <th>অর্জন</th>
+                    <th>অর্জনের হার</th>
+                    <th>চলতি সপ্তাহে অর্জন</th>
+                    <th>গতবছরের একই সময়ে</th>
+                    <th>গতবছরের তুলনায় কম/বেশি</th>
+                    <th>আমানতের স্থিতি</th>
+                    
+                    <th>লক্ষ্যমাত্রা</th>
+                    <th class="red-text">অর্জন<br>(সিবিএস তথ্য হতে)</th>
+                    <th>লক্ষ্যমাত্রার চেয়ে কম/বেশি</th>
+
+                    <th>লক্ষ্যমাত্রা</th>
+                    <th>অর্জন</th>
+                    <th>হার</th>
+
+                    <th>লক্ষ্যমাত্রা</th>
+                    <th>অর্জন</th>
+                    <th>হার</th>
+
+                    <th>লক্ষ্যমাত্রা</th>
+                    <th>অর্জন</th>
+                    <th>হার</th>
+                    <th>চলতি সপ্তাহে অর্জন</th>
+                    <th>গতবছরের একই সময়ে</th>
+                    <th>গতবছরের তুলনায় কম/বেশি</th>
+
+                    <th>লক্ষ্যমাত্রা</th>
+                    <th>অর্জন</th>
+                    <th>হার</th>
+
+                    <th>লক্ষ্যমাত্রা</th>
+                    <th>অর্জন</th>
+                    <th>হার</th>
+                    <th>চলতি সপ্তাহে অর্জন</th>
+                    <th>গতবছরের তুলনায় কম/বেশি</th>
+                    <th>চলতি সপ্তাহে অর্জন</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>১</td>
+                    <td class="col-branch">ফেনী</td>
+                    <td class="col-num">৬৯৭৭.৮৮</td>
+                    <td class="col-num">১৩৩১.০০</td>
+                    <td class="col-num">৩১৯.৫৪</td>
+                    <td>২৪%</td>
+                    <td class="col-num">-১২৭.২১</td>
+                    <td class="col-num">১৬০.৭৮</td>
+                    <td class="col-num">১২৮.৭৬</td>
+                    <td class="col-num">৭৩৩২.২৮</td>
+                    
+                    <td class="col-num">৯৬০০.০০</td>
+                    <td class="col-num">৭২৯৭.৪২</td>
+                    <td class="col-num">-২৩০২.৫৮</td>
+
+                    <td>৭৪৫</td>
+                    <td>৪১৫</td>
+                    <td>৫০%</td>
+
+                    <td>৫৩৯</td>
+                    <td>১১২</td>
+                    <td>২১%</td>
+
+                    <td class="col-num">২৯৫৮.০০</td>
+                    <td class="col-num">৭০১.৩১</td>
+                    <td>২৪%</td>
+                    <td>৪.৪৩</td>
+                    <td>৭২৯.২৩</td>
+                    <td class="col-num">-২৭.৯২</td>
+
+                    <td>৩৯০</td>
+                    <td>১০৪</td>
+                    <td>২৭%</td>
+
+                    <td class="col-num">১৩৭৭.৩১</td>
+                    <td class="col-num">৬৭০.৬৫</td>
+                    <td>৪৯%</td>
+                    <td class="col-num">৬৭৭.৮৫</td>
+                    <td class="col-num">-৭.২০</td>
+                    <td>২.৭৮</td>
+                </tr>
+
+                <tr>
+                    <td>২</td>
+                    <td class="col-branch">এবি হাট</td>
+                    <td class="col-num">২০৫৬.৫৩</td>
+                    <td class="col-num">৫০০.০০</td>
+                    <td class="col-num">৬২.৬৬</td>
+                    <td>১২%</td>
+                    <td class="col-num">১৬.০৬</td>
+                    <td class="col-num">১৪৪.৭৬</td>
+                    <td class="col-num">-৮২.১০</td>
+                    <td class="col-num">২১২১.৮৮</td>
+
+                    <td class="col-num">৩০০০.০০</td>
+                    <td class="col-num">২১৯১.২০</td>
+                    <td class="col-num">-৮৮০.৮০</td>
+
+                    <td>৬২০</td>
+                    <td>২৪২</td>
+                    <td>৩৯%</td>
+
+                    <td>২৮৭</td>
+                    <td>০৮</td>
+                    <td>১০%</td>
+
+                    <td class="col-num">১৩০১.০০</td>
+                    <td class="col-num">৪৪০.৫০</td>
+                    <td>৩৪%</td>
+                    <td>২০.০০</td>
+                    <td class="col-num">৪৩১.১৭</td>
+                    <td class="col-num">৯.৩৩</td>
+
+                    <td>৫৯৫</td>
+                    <td>৬১</td>
+                    <td>১০%</td>
+
+                    <td class="col-num">১০৭৮.৫৮</td>
+                    <td class="col-num">৪৮৩.৮১</td>
+                    <td>৪৫%</td>
+                    <td class="col-num">৩৪২.৯৯</td>
+                    <td class="col-num">১৪০.৮২</td>
+                    <td>১৮.৬৮</td>
+                </tr>
+
+                <tr>
+                    <td>৩</td>
+                    <td class="col-branch">ফাজিলপুর</td>
+                    <td class="col-num">২৪২৬.০৬</td>
+                    <td class="col-num">৫৬৭.০০</td>
+                    <td class="col-num">৪১.৮৯</td>
+                    <td>৭%</td>
+                    <td class="col-num">-৩.৫১</td>
+                    <td class="col-num">৪৭৬.৭২</td>
+                    <td class="col-num">-৪৩৪.৮৩</td>
+                    <td class="col-num">২৫০১.৫৩</td>
+
+                    <td class="col-num">৩800.00</td>
+                    <td class="col-num">২৪৬৭.৯৪</td>
+                    <td class="col-num">-৯৩২.০৬</td>
+
+                    <td>৬৩০</td>
+                    <td>২৮৩</td>
+                    <td>৪৫%</td>
+
+                    <td>২৯৯</td>
+                    <td>১১৩</td>
+                    <td>৩৮%</td>
+
+                    <td class="col-num">১৬১৩.০০</td>
+                    <td class="col-num">৭০২.১১</td>
+                    <td>৪৫%</td>
+                    <td>৭.৭০</td>
+                    <td class="col-num">৬০৯.১৯</td>
+                    <td class="col-num">১২২.৪২</td>
+
+                    <td>৫৩০</td>
+                    <td>১৬১</td>
+                    <td>৩০%</td>
+                    
+                    <td class="col-num">১২৭০.৬৭</td>
+                    <td class="col-num">৬৬০.১১</td>
+                    <td>৫২%</td>
+                    <td class="col-num">৪৭০.৯৮</td>
+                    <td class="col-num">১৮৯.১৩</td>
+                    <td>১০.৭৪</td>
+                </tr>
+
+                <tr>
+                    <td>৪</td>
+                    <td class="col-branch">মুক্ত বাজার</td>
+                    <td class="col-num">৬১৩৫.২১</td>
+                    <td class="col-num">১১৭৮.০০</td>
+                    <td class="col-num">৭৬০.২০</td>
+                    <td>৬৫%</td>
+                    <td class="col-num">-৯৬.৮৩</td>
+                    <td class="col-num">৯৩৭.৯৮</td>
+                    <td class="col-num">-১৭৬.৯৮</td>
+                    <td class="col-num">৬৮৯৩.৪৭</td>
+
+                    <td class="col-num">৮৪০০.০০</td>
+                    <td class="col-num">৬৮৯৫.৪১</td>
+                    <td class="col-num">-১৫০৪.৫৯</td>
+
+                    <td>৭৮৫</td>
+                    <td>৩৮৬</td>
+                    <td>৪৯%</td>
+
+                    <td>৫০২</td>
+                    <td>৭৩</td>
+                    <td>১৫%</td>
+
+                    <td class="col-num">২৫৩৬.০০</td>
+                    <td class="col-num">৫৯৪.২৯</td>
+                    <td>২৩%</td>
+                    <td>১৩.৬৯</td>
+                    <td class="col-num">৬৫৮.৫৯</td>
+                    <td class="col-num">-৫২.৩০</td>
+
+                    <td>৩৯০</td>
+                    <td>২৯</td>
+                    <td>৭%</td>
+
+                    <td class="col-num">১১৮.৬৭</td>
+                    <td class="col-num">৭৩৫.২৮</td>
+                    <td>৬২%</td>
+                    <td class="col-num">৩৬৬.৬১</td>
+                    <td class="col-num">৩৬৮.৬৭</td>
+                    <td>২৬.৩৩</td>
+                </tr>
+
+                <tr>
+                    <td>৫</td>
+                    <td class="col-branch">ছাগলনাইয়া</td>
+                    <td class="col-num">২৩২৪.১০</td>
+                    <td class="col-num">৬৩৭.০০</td>
+                    <td class="col-num">৮৯.৪৭</td>
+                    <td>১৪%</td>
+                    <td class="col-num">২.২০</td>
+                    <td class="col-num">১৩৫.৫৯</td>
+                    <td class="col-num">-৪৬.১২</td>
+                    <td class="col-num">২৪৩৩.২৬</td>
+
+                    <td class="col-num">৩২৫০.০০</td>
+                    <td class="col-num">২৪১৩.৫৭</td>
+                    <td class="col-num">-৮৩৬.৪৩</td>
+
+                    <td>৭৫০</td>
+                    <td>৩০০</td>
+                    <td>৪০%</td>
+
+                    <td>৩৫৯</td>
+                    <td>৭৯</td>
+                    <td>২২%</td>
+
+                    <td class="col-num">২৪১১.০০</td>
+                    <td class="col-num">৫৯৭.৭৪</td>
+                    <td>২৫%</td>
+                    <td>৩.০৫</td>
+                    <td class="col-num">৬৯২.৩০</td>
+                    <td class="col-num">-৯৪.৫৬</td>
+
+                    <td>৪৬৫</td>
+                    <td>১৩৩</td>
+                    <td>২৯%</td>
+
+                    <td class="col-num">১৪৪১.৯৪</td>
+                    <td class="col-num">৬৪৮.৮৮</td>
+                    <td>৪৫%</td>
+                    <td class="col-num">৬১৮.১৮</td>
+                    <td class="col-num">৩০.৭০</td>
+                    <td>১১.৭৬</td>
+                </tr>
+
+                <tr>
+                    <td>৬</td>
+                    <td class="col-branch">কুহুমা</td>
+                    <td class="col-num">৯৪৫.০৭</td>
+                    <td class="col-num">৪০৩.০০</td>
+                    <td class="col-num">১১৬.০১</td>
+                    <td>২৯%</td>
+                    <td class="col-num">৮.০৮</td>
+                    <td class="col-num">৮৭.১৩</td>
+                    <td class="col-num">২৮.৮৮</td>
+                    <td class="col-num">১০৬৩.৩৭</td>
+
+                    <td class="col-num">১৩২৫.০০</td>
+                    <td class="col-num">১০৫১.০৮</td>
+                    <td class="col-num">-২৬৩.৯২</td>
+
+                    <td>৫০০</td>
+                    <td>৩৩৮</td>
+                    <td>৬৮%</td>
+
+                    <td>২৪০</td>
+                    <td>২৫</td>
+                    <td>১০%</td>
+
+                    <td class="col-num">৯৭৪.০০</td>
+                    <td class="col-num">৩২৬.৬৩</td>
+                    <td>৩৪%</td>
+                    <td>৩.৪৮</td>
+                    <td class="col-num">৩২৯.০৪</td>
+                    <td class="col-num">-২.৪১</td>
+
+                    <td>৩৩০</td>
+                    <td>১৩৯</td>
+                    <td>৪২%</td>
+
+                    <td class="col-num">৬৩৭.৯২</td>
+                    <td class="col-num">৩১৭.৭৪</td>
+                    <td>৫০%</td>
+                    <td class="col-num">১৩৯.৮৫</td>
+                    <td class="col-num">১৭৭.৮৯</td>
+                    <td>৪.১৬</td>
+                </tr>
+
+                <tr>
+                    <td>৭</td>
+                    <td class="col-branch">শুভপুর</td>
+                    <td class="col-num">১৮০৯.৬৪</td>
+                    <td class="col-num">৪৯১.০০</td>
+                    <td class="col-num">-২৮.২০</td>
+                    <td>-৬%</td>
+                    <td class="col-num">-৫.১২</td>
+                    <td class="col-num">৫৭.১৭</td>
+                    <td class="col-num">-৮৫.৩৭</td>
+                    <td class="col-num">১৭৮৮.৫৭</td>
+
+                    <td class="col-num">২৫০৫.০০</td>
+                    <td class="col-num">১৭৮১.৪৪</td>
+                    <td class="col-num">-৭২৩.৫৬</td>
+
+                    <td>৫৫০</td>
+                    <td>২২৪</td>
+                    <td>৪১%</td>
+
+                    <td>২৬৩</td>
+                    <td>৪৫</td>
+                    <td>১৭%</td>
+
+                    <td class="col-num">১১৬২.০০</td>
+                    <td class="col-num">৩১৯.৭৫</td>
+                    <td>২৮%</td>
+                    <td>৬.৮৩</td>
+                    <td class="col-num">৩২৮.৪৩</td>
+                    <td class="col-num">-৮.৬৮</td>
+
+                    <td>৫৮০</td>
+                    <td>৬২</td>
+                    <td>১১%</td>
+
+                    <td class="col-num">৭৮৩.১০</td>
+                    <td class="col-num">২৯৯.২০</td>
+                    <td>৩৮%</td>
+                    <td class="col-num">২৭৭.৩৬</td>
+                    <td class="col-num">২১.৮৪</td>
+                    <td>৪.৫৬</td>
+                </tr>
+
+                <tr>
+                    <td>৮</td>
+                    <td class="col-branch">সোনাগাজী</td>
+                    <td class="col-num">২৯১২.২৪</td>
+                    <td class="col-num">৮৩৫.০০</td>
+                    <td class="col-num">-৩২.১৫</td>
+                    <td>-৪%</td>
+                    <td class="col-num">-১৫.১০</td>
+                    <td class="col-num">১৪৩.৩৩</td>
+                    <td class="col-num">-১৭৫.৪৮</td>
+                    <td class="col-num">২৯৭০.৮৩</td>
+
+                    <td class="col-num">৪০৭৫.০০</td>
+                    <td class="col-num">২৮৮০.০৯</td>
+                    <td class="col-num">-১১৯৪.৯১</td>
+
+                    <td>৭৮০</td>
+                    <td>৩৭৯</td>
+                    <td>৪৯%</td>
+
+                    <td>৩০০</td>
+                    <td>৯৫</td>
+                    <td>৩২%</td>
+
+                    <td class="col-num">২৩৮৪.০০</td>
+                    <td class="col-num">৯৮৫.৮১</td>
+                    <td>৪১%</td>
+                    <td class="col-num">২০.৩৬</td>
+                    <td class="col-num">৬১০.৫৩</td>
+                    <td class="col-num">৩৭৫.২৮</td>
+
+                    <td>৮২০</td>
+                    <td>৭৫</td>
+                    <td>৯%</td>
+
+                    <td class="col-num">১৯১৫.৬৭</td>
+                    <td class="col-num">১০৩২.২২</td>
+                    <td>৫৭%</td>
+                    <td class="col-num">৪৮৮.৯৮</td>
+                    <td class="col-num">৫৪৩.২৪</td>
+                    <td>১৪.২১</td>
+                </tr>
+
+                 <tr>
+                    <td>৯</td>
+                    <td class="col-branch">কুঠিরহাট</td>
+                    <td class="col-num">২৯৯৬.৫৫</td>
+                    <td class="col-num">৮৩৬.০০</td>
+                    <td class="col-num">৩১৬.৬৮</td>
+                    <td>৩৮%</td>
+                    <td class="col-num">৩৩.৪৪</td>
+                    <td class="col-num">১৫৩.৭৫</td>
+                    <td class="col-num">১৬২.৯৩</td>
+                    <td class="col-num">৩২৮৯.০৩</td>
+
+                    <td class="col-num">৪১৬০.০০</td>
+                    <td class="col-num">৩২৮৬.২৩</td>
+                    <td class="col-num">-৮৭৩.৭৭</td>
+
+                    <td>৭৪০</td>
+                    <td>৫১৮</td>
+                    <td>৬৬%</td>
+
+                    <td>৩৫৫</td>
+                    <td>৭৯</td>
+                    <td>২৪%</td>
+
+                    <td class="col-num">১৩২০.০০</td>
+                    <td class="col-num">৫১৯.৩৯</td>
+                    <td>৩৯%</td>
+                    <td class="col-num">৫.৫৭</td>
+                    <td class="col-num">৪১৪.৩৯</td>
+                    <td class="col-num">১০৫.০০</td>
+
+                    <td>৫৫০</td>
+                    <td>৯৩</td>
+                    <td>১৭%</td>
+
+                    <td class="col-num">১০০৪.১৩</td>
+                    <td class="col-num">৫৮৪.৪৮</td>
+                    <td>৫৮%</td>
+                    <td class="col-num">৩৩৪.০১</td>
+                    <td class="col-num">২৫০.৪৭</td>
+                    <td>৮.৯৯</td>
+                </tr>
+
+                <tr>
+                    <td>১০</td>
+                    <td class="col-branch">দাগনভূঞা</td>
+                    <td class="col-num">৩২০৪.৫৪</td>
+                    <td class="col-num">৯৬১.০০</td>
+                    <td class="col-num">১৭৫.২১</td>
+                    <td>১৮%</td>
+                    <td class="col-num">১৬.৪২</td>
+                    <td class="col-num">১৯৩.৭৩</td>
+                    <td class="col-num">-১৮.৫৪</td>
+                    <td class="col-num">৩৩৭৯.৩৫</td>
+
+                    <td class="col-num">৪৪৮৫.০০</td>
+                    <td class="col-num">৩৩৩৭.৫২</td>
+                    <td class="col-num">-১১৪৭.৪৮</td>
+
+                    <td>৭০০</td>
+                    <td>৩৪১</td>
+                    <td>৪৯%</td>
+
+                    <td>২৯৯</td>
+                    <td>৩৮</td>
+                    <td>১৩%</td>
+
+                    <td class="col-num">১৯৬৯.০০</td>
+                    <td class="col-num">৪৭১.০৫</td>
+                    <td>২৪%</td>
+                    <td class="col-num">৭.১৮</td>
+                    <td class="col-num">৫০২.১৫</td>
+                    <td class="col-num">-৩১.১০</td>
+
+                    <td>৪৭০</td>
+                    <td>৪৭</td>
+                    <td>১০%</td>
+
+                    <td class="col-num">১০৩৮.৬৮</td>
+                    <td class="col-num">৫৩৪.৫৩</td>
+                    <td>৫১%</td>
+                    <td class="col-num">৩৯০.২২</td>
+                    <td class="col-num">১৪৪.৩১</td>
+                    <td>৪.৪৭</td>
+                </tr>
+
+                 <tr>
+                    <td>১১</td>
+                    <td class="col-branch">জায়লস্কর</td>
+                    <td class="col-num">২০৭৮.১৭</td>
+                    <td class="col-num">৫৮৫.০০</td>
+                    <td class="col-num">১৯৩.৩৭</td>
+                    <td>৩৩%</td>
+                    <td class="col-num">৫.১৩</td>
+                    <td class="col-num">৫০.০৯</td>
+                    <td class="col-num">১৪৩.২৮</td>
+                    <td class="col-num">২২৭৪.৫৯</td>
+                    
+                    <td class="col-num">৩০০০.০০</td>
+                    <td class="col-num">২২৭১.৮৪</td>
+                    <td class="col-num">-৭২৮.১৬</td>
+
+                    <td>৭৭০</td>
+                    <td>৪০৫</td>
+                    <td>৫৩%</td>
+
+                    <td>৫৩৯</td>
+                    <td>৫০</td>
+                    <td>৯%</td>
+
+                    <td class="col-num">১৭৭৯.০০</td>
+                    <td class="col-num">৬৬১.৭২</td>
+                    <td>৩৮%</td>
+                    <td>১৫.৫২</td>
+                    <td class="col-num">৫৭০.৮৯</td>
+                    <td class="col-num">৯০.৮৩</td>
+
+                    <td>৯৯০</td>
+                    <td>২৩৩</td>
+                    <td>২৪%</td>
+                    
+                    <td class="col-num">১৪৪৬.০৯</td>
+                    <td class="col-num">৬২৯.০৫</td>
+                    <td>৪৩%</td>
+                    <td class="col-num">৫৪৭.৯৮</td>
+                    <td class="col-num">৮১.০৪</td>
+                    <td>১৩.২৫</td>
+                </tr>
+
+                <tr>
+                    <td>১২</td>
+                    <td class="col-branch">দুধমুখা</td>
+                    <td class="col-num">২০০২.১৭</td>
+                    <td class="col-num">৫৭৭.০০</td>
+                    <td class="col-num">৬৭.৬১</td>
+                    <td>১২%</td>
+                    <td class="col-num">৩.৬৫</td>
+                    <td class="col-num">-৩০.৭৩</td>
+                    <td class="col-num">৯৮.৩৪</td>
+                    <td class="col-num">২০১৭.৬২</td>
+
+                    <td class="col-num">২৯০০.০০</td>
+                    <td class="col-num">২০৯৯.৭৮</td>
+                    <td class="col-num">-৮০০.২২</td>
+                    
+                    <td>৫০০</td>
+                    <td>২৪০</td>
+                    <td>৪৮%</td>
+
+                    <td>৩৩৫</td>
+                    <td>৫৩</td>
+                    <td>১৬%</td>
+                    
+                    <td class="col-num">১২৫৪.০০</td>
+                    <td class="col-num">৪৮০.৬০</td>
+                    <td>৩৮%</td>
+                    <td>১০.৮৫</td>
+                    <td class="col-num">৩৪২.৬৭</td>
+                    <td class="col-num">১৩৭.৯৩</td>
+
+                    <td>৫১৫</td>
+                    <td>৩২</td>
+                    <td>৬%</td>
+
+                    <td class="col-num">৯৪২.২৬</td>
+                    <td class="col-num">৪৪০.৪৫</td>
+                    <td>৪৭%</td>
+                    <td class="col-num">৩৩২.৬৫</td>
+                    <td class="col-num">১০৭.৮০</td>
+                    <td>১০.৭৮</td>
+                </tr>
+
+                 <tr>
+                    <td>১৩</td>
+                    <td class="col-branch">কুরাইশ মুন্সী</td>
+                    <td class="col-num">১৭০৪.৩০</td>
+                    <td class="col-num">৪৪৮.০০</td>
+                    <td class="col-num">২০৪.৪৭</td>
+                    <td>৪৬%</td>
+                    <td class="col-num">-৫.৯৯</td>
+                    <td class="col-num">৪৩.৫৬</td>
+                    <td class="col-num">১৬০.৯১</td>
+                    <td class="col-num">১৯১৯.৩২</td>
+
+                    <td class="col-num">২৫০০.০০</td>
+                    <td class="col-num">১৯০৮.৭৮</td>
+                    <td class="col-num">-৫৯১.২২</td>
+
+                    <td>৬৫০</td>
+                    <td>২৪৫</td>
+                    <td>৩৮%</td>
+                    
+                    <td>৩০০</td>
+                    <td>৫৭</td>
+                    <td>১৯%</td>
+
+                    <td class="col-num">১৩৩২.০০</td>
+                    <td class="col-num">৬৯০.০১</td>
+                    <td>৫২%</td>
+                    <td>২৪.৮৮</td>
+                    <td class="col-num">৪৩৯.৯৫</td>
+                    <td class="col-num">২৫০.০৬</td>
+                    
+                    <td>৭৯৫</td>
+                    <td>১৪৬</td>
+                    <td>১৮%</td>
+
+                    <td class="col-num">১১৫৮.১৪</td>
+                    <td class="col-num">৬৫২.০৮</td>
+                    <td>৫৬%</td>
+                    <td class="col-num">৪৫৬.৪৩</td>
+                    <td class="col-num">১৯৫.৬৫</td>
+                    <td>১৯.৩১</td>
+                </tr>
+
+                <tr>
+                    <td>১৪</td>
+                    <td class="col-branch">পরশুরাম</td>
+                    <td class="col-num">৪৬০২.২৯</td>
+                    <td class="col-num">১০৮৮.০০</td>
+                    <td class="col-num">৩২.৮৮</td>
+                    <td>৩%</td>
+                    <td class="col-num">০.৬৮</td>
+                    <td class="col-num">৪২ ৪.১৮</td>
+                    <td class="col-num">-৩৯১.৭০</td>
+                    <td class="col-num">৪৫২৩.৯৩</td>
+
+                    <td class="col-num">৬৫০০.০০</td>
+                    <td class="col-num">৪৬০৪.৭৭</td>
+                    <td class="col-num">-১৮৯৫.২৩</td>
+
+                    <td>৭০০</td>
+                    <td>৪০৫</td>
+                    <td>৫৮%</td>
+
+                    <td>৫৩৯</td>
+                    <td>১৭৫</td>
+                    <td>৩২%</td>
+
+                    <td class="col-num">২০১৯.০০</td>
+                    <td class="col-num">৭৯৪.১৩</td>
+                    <td>৩৯%</td>
+                    <td>৪.২৫</td>
+                    <td class="col-num">৩৮৫.৯৬</td>
+                    <td class="col-num">৪০৮.১৭</td>
+
+                    <td>৭৬৫</td>
+                    <td>৬৬</td>
+                    <td>৯%</td>
+
+                    <td class="col-num">১০৭৭.৪২</td>
+                    <td class="col-num">৫০৪.৪৬</td>
+                    <td>৪৬%</td>
+                    <td class="col-num">১৯১.০১</td>
+                    <td class="col-num">৪৪৩.৪৫</td>
+                    <td>৩.১৭</td>
+                </tr>
+
+                <tr>
+                    <td>১৫</td>
+                    <td class="col-branch">বি.এম বাজার</td>
+                    <td class="col-num">২২২৭.৩৩</td>
+                    <td class="col-num">৫৭৩.০০</td>
+                    <td class="col-num">৩৪২.০৭</td>
+                    <td>৬১%</td>
+                    <td class="col-num">১২.৯০</td>
+                    <td class="col-num">৭৩.৩৩</td>
+                    <td class="col-num">২৭৪.০৪</td>
+                    <td class="col-num">২৫৭৫.০৭</td>
+
+                    <td class="col-num">৩১০০.০০</td>
+                    <td class="col-num">২৫৭৫.৭০</td>
+                    <td class="col-num">-৫২৫.৩০</td>
+
+                    <td>৫৫০</td>
+                    <td>২১৪</td>
+                    <td>৩৯%</td>
+
+                    <td>২৬৩</td>
+                    <td>৩৮</td>
+                    <td>১৪%</td>
+
+                    <td class="col-num">৯৪৮.০০</td>
+                    <td class="col-num">৪২৯.৮৭</td>
+                    <td>৪৫%</td>
+                    <td>৮.০০</td>
+                    <td class="col-num">৩২৫.২৮</td>
+                    <td class="col-num">১০৪.৫৯</td>
+
+                    <td>৫৩০</td>
+                    <td>৭৯</td>
+                    <td>১৫%</td>
+
+                    <td class="col-num">৭৪৫.৪৮</td>
+                    <td class="col-num">৩৫০.৭০</td>
+                    <td>৪৭%</td>
+                    <td class="col-num">১৮৬.৬৫</td>
+                    <td class="col-num">১৬৪.০৫</td>
+                    <td>৬.৪৩</td>
+                </tr>
+
+                <tr>
+                    <td>১৬</td>
+                    <td class="col-branch">ফুলগাজী</td>
+                    <td class="col-num">২৬২১.৮৩</td>
+                    <td class="col-num">৫৩৭.০০</td>
+                    <td class="col-num">৬১.৭১</td>
+                    <td>১২%</td>
+                    <td class="col-num">-১১.১২</td>
+                    <td class="col-num">৩২৭.০৯</td>
+                    <td class="col-num">-২৬৫.৩৮</td>
+                    <td class="col-num">২৬৭৪.২২</td>
+
+                    <td class="col-num">৩৭০০.০০</td>
+                    <td class="col-num">২৬৮৩.৫৪</td>
+                    <td class="col-num">-১০১৬.৪৬</td>
+
+                    <td>৬০০</td>
+                    <td>৩৯৪</td>
+                    <td>৬৬%</td>
+
+                    <td>৩৮৩</td>
+                    <td>৮৬</td>
+                    <td>২২%</td>
+
+                    <td class="col-num">১৫৭২.০০</td>
+                    <td class="col-num">৫৩৮.২৫</td>
+                    <td>৩৪%</td>
+                    <td>৪১.৯০</td>
+                    <td class="col-num">৪৯২.৭৩</td>
+                    <td class="col-num">৪৫.৫২</td>
+
+                    <td>৩৭৫</td>
+                    <td>৭০</td>
+                    <td>১৯%</td>
+
+                    <td class="col-num">১০৭৯.৯৯</td>
+                    <td class="col-num">৫৭২.৬৯</td>
+                    <td>৫৩%</td>
+                    <td class="col-num">৩৫৪.৫৩</td>
+                    <td class="col-num">২১৮.১৬</td>
+                    <td>১০.১৮</td>
+                </tr>
+
+                <tr>
+                    <td>১৭</td>
+                    <td class="col-branch">জিএমহাট</td>
+                    <td class="col-num">২১৭০.৭৭</td>
+                    <td class="col-num">৫৮২.০০</td>
+                    <td class="col-num">৩২১.১৮</td>
+                    <td>৫৫%</td>
+                    <td class="col-num">-৩.৬৪</td>
+                    <td class="col-num">১৫৬.৩০</td>
+                    <td class="col-num">১৬৪.৮৮</td>
+                    <td class="col-num">২৪৯৭.০৪</td>
+
+                    <td class="col-num">৩৩০০.০০</td>
+                    <td class="col-num">২৪৯১.৯৫</td>
+                    <td class="col-num">-৮০৮.০৫</td>
+
+                    <td>৫০০</td>
+                    <td>২৫৮</td>
+                    <td>৫২%</td>
+
+                    <td>৩০০</td>
+                    <td>৩২</td>
+                    <td>১১%</td>
+
+                    <td class="col-num">১০১০.০০</td>
+                    <td class="col-num">৪৭৫.৬১</td>
+                    <td>৪৭%</td>
+                    <td class="col-num">৮.০৭</td>
+                    <td class="col-num">৩৯১.৬৫</td>
+                    <td class="col-num">৮৩.৯৬</td>
+
+                    <td>৪৫৫</td>
+                    <td>১২২</td>
+                    <td>২৭%</td>
+
+                    <td class="col-num">৭১৩.৩৭</td>
+                    <td class="col-num">৩২৫.১৩</td>
+                    <td>৪৬%</td>
+                    <td class="col-num">১৯৩.১৩</td>
+                    <td class="col-num">১৩২.০০</td>
+                    <td>৩.৮৮</td>
+                </tr>
+
+                <tr>
+                    <td>১৮</td>
+                    <td class="col-branch">আমজাদহাট</td>
+                    <td class="col-num">৪২৭৯.৯৯</td>
+                    <td class="col-num">৯৯৫.০০</td>
+                    <td class="col-num">৪২২.৩৭</td>
+                    <td>৪২%</td>
+                    <td class="col-num">৩.৬২</td>
+                    <td class="col-num">৩৪৮.০৫</td>
+                    <td class="col-num">৭৬.৩২</td>
+                    <td class="col-num">৪৬৯৯.৮৭</td>
+
+                    <td class="col-num">৬০০০.০০</td>
+                    <td class="col-num">৪৭০২.৩৬</td>
+                    <td class="col-num">-১২৯৭.৬৪</td>
+                    
+                    <td>৮৫০</td>
+                    <td>৫২৭</td>
+                    <td>৬২%</td>
+
+                    <td>৪৯৪</td>
+                    <td>৭৬</td>
+                    <td>১৫%</td>
+
+                    <td class="col-num">১৫৫৮.০০</td>
+                    <td class="col-num">৬৬১.৮২</td>
+                    <td>৪২%</td>
+                    <td class="col-num">১৬.৪০</td>
+                    <td class="col-num">৫১৬.৯৬</td>
+                    <td class="col-num">১৪৪.৮৬</td>
+
+                    <td>৪৫৫</td>
+                    <td>৯৩</td>
+                    <td>২০%</td>
+
+                    <td class="col-num">১০৭৫.২০</td>
+                    <td class="col-num">৪০৮.৪৬</td>
+                    <td>৩৮%</td>
+                    <td class="col-num">৩৯৯.৭৪</td>
+                    <td class="col-num">৮.৭২</td>
+                    <td>২.৯৭</td>
+                </tr>
+
+                <tr style="font-weight: bold; background-color: #f0f0f0;">
+                    <td></td>
+                    <td class="col-branch">মোট :</td>
+                    <td class="col-num">৫০৪৭৭.০৮</td>
+                    <td class="col-num">১৩১২০.০০</td>
+                    <td class="col-num">৩৪৭২.২৫</td>
+                    <td>২৬%</td>
+                    <td class="col-num">-১৪৫.৪৫</td>
+                    <td class="col-num">৩৯১০.০১</td>
+                    <td class="col-num">-৪৩৮.০৬</td>
+                    <td class="col-num">৫৭২২৬.০২</td>
+                    
+                    <td class="col-num">৭৫০০০.০০</td>
+                    <td class="col-num">৫৬৯৪৬.৬৫</td>
+                    <td class="col-num">-১৮০৫০.৩৫</td>
+
+                    <td>১২০০০</td>
+                    <td>৬১৯৪</td>
+                    <td>৫২%</td>
+
+                    <td>৬৫০০</td>
+                    <td>১২৬৪</td>
+                    <td>১৯%</td>
+
+                    <td class="col-num">৩০০০০.০০</td>
+                    <td class="col-num">১০৬৯০.৫৯</td>
+                    <td>৩৫%</td>
+                    <td class="col-num">২২০.৩৩</td>
+                    <td class="col-num">৮৭৪৮.৬১</td>
+                    <td class="col-num">১৯৪১.৭৮</td>
+
+                    <td>১০০০০</td>
+                    <td>১৭৪৫</td>
+                    <td>১৭%</td>
+
+                    <td class="col-num">২০৬৪৮.১০</td>
+                    <td class="col-num">৯৯৭৯.৮৯</td>
+                    <td>৪৯%</td>
+                    <td class="col-num">৬৭৪২.৪৫</td>
+                    <td class="col-num">৩২৩৭.০৪</td>
+                    <td>১৮০.৬৫</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="text-align: left; padding-left: 5px;">কোটি টাকায় :</td>
+                    <td class="col-num">৫০৪.৭৭</td>
+                    <td class="col-num">১৩১.২০</td>
+                    <td class="col-num">৩৪.৭২</td>
+                    <td>২৬%</td>
+                    <td class="col-num">-১.৪৬</td>
+                    <td class="col-num">৩৯.১০</td>
+                    <td class="col-num">-৪.৩৮</td>
+                    <td class="col-num">৫৭২.২৬</td>
+                    
+                    <td class="col-num">৭৫০.০০</td>
+                    <td class="col-num">৫৬৯.৫০</td>
+                    <td class="col-num">-১৮০.৫০</td>
+                    
+                    <td colspan="3"></td>
+                    <td colspan="3"></td>
+
+                    <td class="col-num">৩০০.০০</td>
+                    <td class="col-num">১০৬.৯১</td>
+                    <td>৩৫%</td>
+                    <td>২.২০</td>
+                    <td>৮৭.৪৯</td>
+                    <td>১৯.৪২</td>
+
+                    <td colspan="3"></td>
+
+                    <td class="col-num">২০৬.৬৪</td>
+                    <td class="col-num">৯৯.৮০</td>
+                    <td>৪৯%</td>
+                    <td>৬৭.৪০</td>
+                    <td>৩২.০৭</td>
+                    <td>১.৮১</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer-section">
+        <div class="footer-lines">
+            সূত্র নং- মুঃআঃকাঃ(ফেনী)/(৫১০)/২০২৫-২০২৬/৮০৯(২২); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; তারিখ : ১৮.১২.২০২৫ ইং<br>
+            সদয় জ্ঞাতার্থে অনুলিপি প্রেরণ :-<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;০১। স্টাফ অফিসার, মহাব্যবস্থাপক মহোদয়ের দপ্তর, বিকেবি, বিভাগীয় কার্যালয়, কুমিল্লা।<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;০২। উপমহাব্যবস্থাপক, ঋণ আদায় বিভাগ, বিকেবি, প্রধান কার্যালয়, ঢাকা।<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;০৩। উপমহাব্যবস্থাপক, ঋণ শ্রেণীবিন্যাস বিভাগ, বিকেবি, প্রধান কার্যালয়, ঢাকা।<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;০৪। আঞ্চলিক নিরীক্ষা কর্মকর্তা, আঞ্চলিক নিরীক্ষা কার্যালয়, ফেনী।<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;০৫। সকল শাখা ব্যবস্থাপক, বিকেবি, মূখ্য অঞ্চল, ফেনী।
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
