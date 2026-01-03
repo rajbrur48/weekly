@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangladesh Krishi Bank - Comprehensive Branch Report</title>
+<style>
+    body {
+        font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif;
+        background-color: #f4f6f9;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+    
+    h1, h2 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+
+    .section-title {
+        background-color: #2c3e50;
+        color: white;
+        padding: 12px;
+        margin-top: 40px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        background-color: #fff;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        margin-bottom: 30px;
+        max-height: 85vh;
+    }
+
+    table {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+        font-size: 11px;
+        min-width: 2000px;
+    }
+
+    /* Cell Styling */
+    th, td {
+        border-right: 1px solid #dee2e6;
+        border-bottom: 1px solid #dee2e6;
+        padding: 8px 6px;
+        text-align: right;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    /* Header Styling */
+    thead th {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        color: white;
+        font-weight: normal;
+        text-align: center;
+    }
+    
+    /* Main Header Row */
+    .header-main th {
+        background-color: #2980b9;
+        border-bottom: 1px solid #34495e;
+        font-size: 12px;
+        font-weight: bold;
+        height: 45px;
+    }
+
+    /* Sub Header Row */
+    .header-sub th {
+        top: 46px; /* Adjust based on main header height */
+        background-color: #3498db;
+        font-size: 10px;
+        height: 35px;
+    }
+
+    /* Sticky Branch Column */
+    .branch-col {
+        position: sticky;
+        left: 0;
+        z-index: 101;
+        background-color: #ecf0f1;
+        text-align: left;
+        font-weight: bold;
+        width: 160px;
+        color: #2c3e50;
+        border-right: 2px solid #bdc3c7;
+    }
+
+    /* Fix for sticky corner intersection */
+    thead .branch-col {
+        z-index: 102;
+        background-color: #2c3e50;
+        color: white;
+    }
+    .header-sub .branch-col {
+        background-color: #34495e;
+        top: 46px;
+    }
+
+    /* Row Styling */
+    tbody tr:nth-child(even) td { background-color: #f8f9fa; }
+    tbody tr:hover td { background-color: #e8f6f3; }
+    
+    tbody tr:nth-child(even) .branch-col { background-color: #ecf0f1; }
+    tbody tr:hover .branch-col { background-color: #d5dbdb; }
+
+    /* Special Rows */
+    .total-row td {
+        background-color: #d35400 !important;
+        color: white;
+        font-weight: bold;
+    }
+    .crore-row td {
+        background-color: #c0392b !important;
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Utilities */
+    .center { text-align: center; }
+    .negative { color: #c0392b; font-weight: bold; }
+    .divider { border-right: 2px solid #7f8c8d; }
+</style>
+</head>
+<body>
+
+<h1>সমন্বিত শাখা প্রতিবেদন (Integrated Branch Report)</h1>
+
+<div class="section-title">পর্ব ১: ঋণ আদায় ও আর্থিক স্থিতি (Part 1: Loan Recovery & Financial Balance)</div>
+<div class="table-wrapper">
+    <table>
+        <thead>
+            <tr class="header-main">
+                <th rowspan="2" class="branch-col">শাখার নাম<br>(Branch Name)</th>
+                <th colspan="3" class="divider">ডব্লিউ সিএল-১ (WCL-1)</th>
+                <th colspan="3" class="divider">ডব্লিউ সিএল-২ (WCL-2)</th>
+                <th colspan="3" class="divider">ডব্লিউ সিএল-৩ (WCL-3)</th>
+                <th colspan="2" class="divider">ডব্লিউ সিএল-৪ (WCL-4)</th>
+                <th colspan="2" class="divider">এনসিএল (NCL)</th>
+                <th colspan="2" class="divider">সি এল (CL)</th>
+                <th colspan="2" class="divider">দ্বিগুণ আদায় (Double)</th>
+                <th colspan="3" class="divider">রিসিডিউল (Reschedule)</th>
+                <th colspan="3" class="divider">অবলোপন (Written-off)</th>
+                <th colspan="1" class="divider">৫২-সুদ (52-Susp)</th>
+                <th colspan="3" class="divider">রেমিট্যান্স (Remittance)</th>
+                <th colspan="3">অনাদায়ী স্থিতি (Outstanding)</th>
+            </tr>
+            <tr class="header-sub">
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th class="divider">অর্জন</th>
+                <th>লক্ষ্য</th><th class="divider">অর্জন</th>
+                <th>লক্ষ্য</th><th class="divider">অর্জন</th>
+                <th>লক্ষ্য</th><th class="divider">অর্জন</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th class="divider">আদায়</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>স্থিতি</th><th>+/-</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="branch-col">১. ফেনী</td>
+                <td>১৩৫.৮৬</td><td>১৩০.৭৩</td><td class="divider center">৯৬%</td>
+                <td>৩১৯.০৫</td><td>২৩০.৬১</td><td class="divider center">৭২%</td>
+                <td>২৫৫.৭৩</td><td>২৩.৫৬</td><td class="divider center">৯%</td>
+                <td>২৫৫.৭৩</td><td class="divider">২৩.৫৬</td>
+                <td>২৩২.১৭</td><td class="divider">৪.২৯</td>
+                <td>৩৯৭.০০</td><td class="divider">২১৮.২৭</td>
+                <td>২০১.৭৭</td><td class="divider">১৬.৫০</td>
+                <td>১৩৩.৯০</td><td>৪৭.৫০</td><td class="divider center">৩৫%</td>
+                <td>১.০৫</td><td>০.০০</td><td class="divider center">০%</td>
+                <td class="divider">২৪.২৫</td>
+                <td>৫১০০.০০</td><td>১৩৫৫.১০</td><td class="divider center">২৭%</td>
+                <td>২৯০০.০০</td><td>১৯৮১.৮৯</td><td class="negative">-৯১৮.১১</td>
+            </tr>
+            <tr>
+                <td class="branch-col">২. এবিহাট</td>
+                <td>১৩৫.৯৪</td><td>৯০.৯২</td><td class="divider center">৬৭%</td>
+                <td>-</td><td>-</td><td class="divider center">-</td>
+                <td>-</td><td>-</td><td class="divider center">-</td>
+                <td>-</td><td class="divider">-</td>
+                <td>-</td><td class="divider">-</td>
+                <td>২৯০.৬৯</td><td class="divider">-</td>
+                <td>-</td><td class="divider">-</td>
+                <td>০.৩৫</td><td>২.৩৯</td><td class="divider center">৬৮৩%</td>
+                <td>৪.৬৬</td><td>১.১০</td><td class="divider center">২৪%</td>
+                <td class="divider">৩০.৩৩</td>
+                <td>৬০০.০০</td><td>৯১.৬৯</td><td class="divider center">১৫%</td>
+                <td>২৪০০.০০</td><td>১৫৩৩.৫৫</td><td class="negative">-৮৬৬.৪৫</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৩. ফাজিলপুর</td>
+                <td>১৫৬.৪৭</td><td>১৬৯.১৫</td><td class="divider center">৯৩%</td>
+                <td>১০২.৯৫</td><td>৪৫.০২</td><td class="divider center">-</td>
+                <td>১৯৭.০৪</td><td>১২.৬৮</td><td class="divider center">-</td>
+                <td>২৫৪.৬০</td><td class="divider">-</td>
+                <td>-</td><td class="divider">-</td>
+                <td>৩০০.৫৬</td><td class="divider">-</td>
+                <td>-</td><td class="divider">-</td>
+                <td>৫.৬৬</td><td>২.০০</td><td class="divider center">৩৫%</td>
+                <td>৩.৬৮</td><td>১.১০</td><td class="divider center">৩০%</td>
+                <td class="divider">২৪.৬০</td>
+                <td>৫০০.০০</td><td>১১৯.৩৭</td><td class="divider center">২৪%</td>
+                <td>২৯০০.০০</td><td>২০৫৮.১৬</td><td class="negative">-৮৪১.৮৪</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৪. মুক্তবাজার</td>
+                <td>১৩৮.৮৪</td><td>১১৩.৬৯</td><td class="divider center">৮২%</td>
+                <td>-</td><td>-</td><td class="divider center">-</td>
+                <td>-</td><td>-</td><td class="divider center">-</td>
+                <td>-</td><td class="divider">-</td>
+                <td>-</td><td class="divider">-</td>
+                <td>২০০.১৯</td><td class="divider">-</td>
+                <td>-</td><td class="divider">-</td>
+                <td>৪৯.২৫</td><td>১৭.৫০</td><td class="divider center">৩৬%</td>
+                <td>৪.২৯</td><td>১.০০</td><td class="divider center">২৩%</td>
+                <td class="divider">১১.৩৩</td>
+                <td>৫০০০.০০</td><td>৬৯৯.০০</td><td class="divider center">১৪%</td>
+                <td>২৫০০.০০</td><td>১৬৭৮.৪০</td><td class="negative">-৮২১.৬০</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৫. ছাগলনাইয়া</td>
+                <td>১৬৭.৫০</td><td>১৩৯.১১</td><td class="divider center">৮৩%</td>
+                <td>২১৭.৮৩</td><td>১৯৬.৬৬</td><td class="divider center">৯০%</td>
+                <td>৩১৪.১৬</td><td>৯০.৭০</td><td class="divider center">২৯%</td>
+                <td>৩৯৪.১৯</td><td class="divider">৩৬.০২</td>
+                <td>৩৫৮.১৭</td><td class="divider">১২.১০</td>
+                <td>৩৪৮.০০</td><td class="divider">১৮৯.৭৭</td>
+                <td>১৭৪.১৩</td><td class="divider">২৮.৬৭</td>
+                <td>০.২৫</td><td>০.৪৩</td><td class="divider center">১৭২%</td>
+                <td>২.১৩</td><td>১.৫০</td><td class="divider center">৭০%</td>
+                <td class="divider">২৭.২৫</td>
+                <td>২৯০০.০০</td><td>৫৭৫.৮০</td><td class="divider center">২০%</td>
+                <td>৩২০০.০০</td><td>২১৪০.৮২</td><td class="negative">-১০৫৯.১৮</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৬. কুহুমা</td>
+                <td>১১৬.৫৩</td><td>৯৯.৮০</td><td class="divider center">৮৬%</td>
+                <td>১১৬.১৯</td><td>১০২.৪৩</td><td class="divider center">৮৮%</td>
+                <td>১২১.৮৪</td><td>৩১.৩৪</td><td class="divider center">২৬%</td>
+                <td>-</td><td class="divider">-</td>
+                <td>১৪১.৫৬</td><td class="divider">২৯.৯৮</td>
+                <td>১৯৯.০০</td><td class="divider">১০৭.৬১</td>
+                <td>৮৮.৩৯</td><td class="divider">৬.০১</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>০.২৫</td><td>০.০৮</td><td class="divider center">৩২%</td>
+                <td class="divider">১০.৫০</td>
+                <td>৭৫০.০০</td><td>১০১.২৯</td><td class="divider center">১৪%</td>
+                <td>১২০০.০০</td><td>৮২৭.২৫</td><td class="negative">-৩৭২.৭৫</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৮. সোনাগাজী</td>
+                <td>৩৮১.৭৩</td><td>২৪১.১৪</td><td class="divider center">৬৩%</td>
+                <td>১৪০.৫৯</td><td>৪৯.৩৯</td><td class="divider center">৩৫%</td>
+                <td>২২৭.৩০</td><td>২৯.৪০</td><td class="divider center">-</td>
+                <td>১৫৭.৮৫</td><td class="divider">১২.৫১</td>
+                <td>১৪৫.৩৪</td><td class="divider">১৫.৬৪</td>
+                <td>৭২৪.০০</td><td class="divider">৪৭৩.১১</td>
+                <td>২৯৫.০০</td><td class="divider">৬.২০</td>
+                <td>১.২৫</td><td>০.৬৮</td><td class="divider center">৫৪%</td>
+                <td>১৩.৬০</td><td>৩.৭২</td><td class="divider center">২৭%</td>
+                <td class="divider">১৪.০৭</td>
+                <td>৩৮০০.০০</td><td>১২৩৩.১৮</td><td class="divider center">৩২%</td>
+                <td>৩৮০০.০০</td><td>২৪৭১.১৮</td><td class="negative">-১৩২৮.৮২</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৯. কুটিরহাট</td>
+                <td>১৪৫.৭৫</td><td>৯৬.৩৬</td><td class="divider center">৬৬%</td>
+                <td>২৩৬.৯৪</td><td>২২২.০৩</td><td class="divider center">৯৪%</td>
+                <td>১২৮.৬৯</td><td>১২০.৭২</td><td class="divider center">-</td>
+                <td>১২৩.১৫</td><td class="divider">২৭.৫১</td>
+                <td>১৪০.৫৯</td><td class="divider">১৬.৮৫</td>
+                <td>৩৫৩.০০</td><td class="divider">২৫২.১০</td>
+                <td>১৩৫.১৬</td><td class="divider">২.৩৭</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td class="divider">৬.৩৫</td>
+                <td>২১০০.০০</td><td>৫৬৭.৭০</td><td class="divider center">২৭%</td>
+                <td>২২০০.০০</td><td>১৪৯৯.৩৮</td><td class="negative">-৭০০.৬২</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১০. দাগনভূঞা</td>
+                <td>১৯৮.০৬</td><td>৬৯.৩৭</td><td class="divider center">৩৫%</td>
+                <td>১৭৬.৭৯</td><td>১৬৮.১৯</td><td class="divider center">৯৫%</td>
+                <td>১৭১.২৪</td><td>২৯.৭৩</td><td class="divider center">-</td>
+                <td>১৪৮.৭২</td><td class="divider">৬.৯৩</td>
+                <td>৯৫.৬৪</td><td class="divider">১০.২৩</td>
+                <td>২১১.০০</td><td class="divider">৮০.৮৭</td>
+                <td>৩৩৭.১৭</td><td class="divider">০.০০</td>
+                <td>৬.০২</td><td>২.৫০</td><td class="divider center">৪২%</td>
+                <td>০.৭৮</td><td>০.০০</td><td class="divider center">০%</td>
+                <td class="divider">১৫.৮৬</td>
+                <td>৪৪০০.০০</td><td>২৩৮১.৬৬</td><td class="divider center">৫৪%</td>
+                <td>৩৬০০.০০</td><td>২৩৮৬.৯৯</td><td class="negative">-১২১৩.০১</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১১. জায়লস্কর</td>
+                <td>১১৬.৩৬</td><td>৮৬.৯৬</td><td class="divider center">৭৫%</td>
+                <td>২২৯.৩০</td><td>২১৯.২৬</td><td class="divider center">৯৬%</td>
+                <td>২৫৩.১০</td><td>১৫২.৬০</td><td class="divider center">-</td>
+                <td>২৬৮.৭০</td><td class="divider">২৭.২৮</td>
+                <td>১৪১.৭৯</td><td class="divider">১১.০০</td>
+                <td>৬৩৩.০০</td><td class="divider">৩০১.২০</td>
+                <td>১.০৩</td><td class="divider">০.০০</td>
+                <td>১৩.৪৬</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>০.২০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td class="divider">৩.৯০</td>
+                <td>৭৫০.০০</td><td>৫০২.৯৩</td><td class="divider center">৬৭%</td>
+                <td>২২০০.০০</td><td>১৫৬৭.৪৬</td><td class="negative">-৬৩২.৫৪</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১২. দুধমুখা</td>
+                <td>১১৮.৯৯</td><td>৮৯.২৬</td><td class="divider center">৭৫%</td>
+                <td>১২০.৭২</td><td>১১১.৮৩</td><td class="divider center">৯৩%</td>
+                <td>৩০৪.৮০</td><td>৯৮.৫১</td><td class="divider center">-</td>
+                <td>১৬৯.৭৩</td><td class="divider">২৪.২৭</td>
+                <td>১২৮.৬৯</td><td class="divider">৩.২৮</td>
+                <td>২২২.০০</td><td class="divider">১৩৭.৫৩</td>
+                <td>২.৬৩</td><td class="divider">০.০০</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td class="divider">১৯.৯৬</td>
+                <td>৫০০.০০</td><td>৯৫.৮৫</td><td class="divider center">১৯%</td>
+                <td>২০০০.০০</td><td>১৩৭৭.১৪</td><td class="negative">-৬২২.৮৬</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৩. কুরাইশমুন্সী</td>
+                <td>১৭৯.৮২</td><td>১৩৯.৮২</td><td class="divider center">৭৮%</td>
+                <td>১৭১.২৪</td><td>১৬২.৫৩</td><td class="divider center">৯৫%</td>
+                <td>২৬০.৩০</td><td>১৬৯.৪৫</td><td class="divider center">-</td>
+                <td>১৪৭.৬৭</td><td class="divider">২১.৪১</td>
+                <td>২৪১.৪২</td><td class="divider">২৯.৭৩</td>
+                <td>৫৫৭.০০</td><td class="divider">৩৩৮.৪২</td>
+                <td>১.৯৬</td><td class="divider">০.০০</td>
+                <td>০.৬৬</td><td>০.৩৫</td><td class="divider center">৫৩%</td>
+                <td>০.৫২</td><td>০.০০</td><td class="divider center">০%</td>
+                <td class="divider">৫৯.২৬</td>
+                <td>৫০০.০০</td><td>২৪৪.৭২</td><td class="divider center">৪৯%</td>
+                <td>৩০০০.০০</td><td>১৯৮০.৫৫</td><td class="negative">-১০১৯.৪৫</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৪. পরশুরাম</td>
+                <td>১০০.৪১</td><td>৮০.৩২</td><td class="divider center">৮০%</td>
+                <td>২৫৮.৮৯</td><td>১৯৩.৪৫</td><td class="divider center">৭৫%</td>
+                <td>৩৪২.৭৮</td><td>২৩৫.৩৯</td><td class="divider center">৬৯%</td>
+                <td>১২৪.৫৪</td><td class="divider">১১.৭৫</td>
+                <td>১১২.৭৯</td><td class="divider">১৩.৫৫</td>
+                <td>৫৪৬.০০</td><td class="divider">২৬১.১০</td>
+                <td>২৫৮.৫৫</td><td class="divider">২.৫৫</td>
+                <td>৪.৮০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>২.৬২</td><td>০.০০</td><td class="divider center">০%</td>
+                <td class="divider">৩০.১৭</td>
+                <td>১০০০.০০</td><td>১৫৭.৮১</td><td class="divider center">১৬%</td>
+                <td>২২০০.০০</td><td>১৪৯৬.৪৯</td><td class="negative">-৭০৩.৫১</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৫. বিএম বাজার</td>
+                <td>৪৩.৯৭</td><td>২৯.৩৫</td><td class="divider center">৬৭%</td>
+                <td>১১৮.৩৬</td><td>১১৪.৩৩</td><td class="divider center">৯৭%</td>
+                <td>১৮৯.৬৯</td><td>১৩৭.৯১</td><td class="divider center">৭৩%</td>
+                <td>১৩৪.৪৫</td><td class="divider">৮.৬৫</td>
+                <td>১২৫.৮০</td><td class="divider">১৪.৬২</td>
+                <td>২৫৯.০০</td><td class="divider">১০৩.৬৭</td>
+                <td>৩.৬০</td><td class="divider">০.০০</td>
+                <td>১.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>০.৮০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td class="divider">২৩.০০</td>
+                <td>৫০০.০০</td><td>২৫০.০০</td><td class="divider center">৫০%</td>
+                <td>১৮০০.০০</td><td>১২১৩.২৯</td><td class="negative">-৫৮৬.৭১</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৬. ফুলগাজী</td>
+                <td>১০৭.৪১</td><td>৯৫.৮৪</td><td class="divider center">৮৯%</td>
+                <td>২০৫.২৫</td><td>১৮৯.০৬</td><td class="divider center">৯২%</td>
+                <td>৪১৯.৯৬</td><td>২৪৫.৮৬</td><td class="divider center">৫৯%</td>
+                <td>১৭৪.১০</td><td class="divider">৯.৪৪</td>
+                <td>১৪১.৯০</td><td class="divider">১০.৫৭</td>
+                <td>১৯৯.০০</td><td class="divider">১০৭.৮৬</td>
+                <td>২.৭৫</td><td class="divider">১.৩৯</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>০.০৬</td><td>০.০০</td><td class="divider center">০%</td>
+                <td class="divider">১৫.৮৩</td>
+                <td>৮০০.০০</td><td>২২.০৭</td><td class="divider center">৩%</td>
+                <td>৩২০০.০০</td><td>২২৫৫.০০</td><td class="negative">-৯৪৫.০০</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৭. জিএমহাট</td>
+                <td>৯৩.১৫</td><td>৮৬.০৯</td><td class="divider center">৯২%</td>
+                <td>১০৪.০৯</td><td>১০১.১৭</td><td class="divider center">৯৭%</td>
+                <td>১৩১.২২</td><td>২৯.৪৭</td><td class="divider center">২২%</td>
+                <td>২০২.৪০</td><td class="divider">২০.৫৫</td>
+                <td>১৮১.৮৫</td><td class="divider">৭.০৬</td>
+                <td>১৮১.০০</td><td class="divider">১১৭.৫০</td>
+                <td>৪.০৬</td><td class="divider">০.০০</td>
+                <td>১.৫০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>২.০৯</td><td>০.১৪</td><td class="divider center">৭%</td>
+                <td class="divider">১১.১৮</td>
+                <td>৮০০.০০</td><td>৫১.৭৭</td><td class="divider center">৬%</td>
+                <td>১৭০০.০০</td><td>১২১৫.৭৫</td><td class="negative">-৪৮৪.২৫</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৮. আমজাদহাট</td>
+                <td>১৪৩.৯৩</td><td>১১৯.৩৭</td><td class="divider center">৮৩%</td>
+                <td>১০৬.৮৬</td><td>৯৭.১৭</td><td class="divider center">৯১%</td>
+                <td>৩৩৬.৬৯</td><td>১২৬.৭৭</td><td class="divider center">৩৮%</td>
+                <td>২৩৮.১২</td><td class="divider">৮.৭৮</td>
+                <td>২২৯.৩৪</td><td class="divider">১৬.২২</td>
+                <td>২৪৮.০০</td><td class="divider">১৩১.১১</td>
+                <td>৪.২৯</td><td class="divider">০.৭৪</td>
+                <td>৪.৩১</td><td>১.৬০</td><td class="divider center">৩৭%</td>
+                <td>০.৬৯</td><td>০.০২</td><td class="divider center">৩%</td>
+                <td class="divider">১৪.৬৬</td>
+                <td>১৪০০.০০</td><td>১৭৭.৯৩</td><td class="divider center">১৩%</td>
+                <td>২৪০০.০০</td><td>১৭০৫.৮৯</td><td class="negative">-৬৯৪.১১</td>
+            </tr>
+            <tr class="total-row">
+                <td class="branch-col">মোট (Total)</td>
+                <td>২৫৯৪.০৫</td><td>১৯৩৫.২৬</td><td class="divider center">৭৫%</td>
+                <td>৩০৫৬.০৮</td><td>২৬০২.৬২</td><td class="divider center">৮৬%</td>
+                <td>৪৭০৬.৫৩</td><td>২২১৫.৮২</td><td class="divider center">৪৭%</td>
+                <td>২৪৯০.৭১</td><td class="divider">১২৮.০০</td>
+                <td>৩৩৭০.৪৫</td><td class="divider">৩৪৭.৬৮</td>
+                <td>৬৩৫৬.০০</td><td class="divider">৩৪৭৪.৬২</td>
+                <td>৩৩৭৪.০৯</td><td class="divider">৮২.১০</td>
+                <td>২২৫.৯৭</td><td>৮১.০০</td><td class="divider center">৩৬%</td>
+                <td>৪২.৯৬</td><td>৯.৫১</td><td class="divider center">২২%</td>
+                <td class="divider">৩৩৯.৪৭</td>
+                <td>২৮০০০.০০</td><td>৭৩৫২.১৫</td><td class="divider center">২৬%</td>
+                <td>৪৫০০০.০০</td><td>৩০৬২২.৩৮</td><td class="negative">-১৪৩৭৭.৬২</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section-title">পর্ব ২: খাত ভিত্তিক ঋণ বিতরণ ও ঋণগ্রহীতা তথ্য (Part 2: Sector-wise Disbursement & Borrower Info)</div>
+<div class="table-wrapper">
+    <table>
+        <thead>
+            <tr class="header-main">
+                <th rowspan="2" class="branch-col">শাখার নাম<br>(Branch Name)</th>
+                <th colspan="3" class="divider">ঋণগ্রহীতা (Borrowers)</th>
+                <th colspan="3" class="divider">শ্রেনীকৃত ঋনের স্থিতি (NCL Status)</th>
+                <th colspan="3" class="divider">শস্য (Crop)</th>
+                <th colspan="3" class="divider">বর্গাচাষী (Sharecropper)</th>
+                <th colspan="3" class="divider">মোট শস্য (Total Crop)</th>
+                <th colspan="3" class="divider">মৎস্য (Fishery)</th>
+                <th colspan="3" class="divider">প্রানী সম্পদ (Livestock)</th>
+                <th colspan="3" class="divider">সেচ (Irrigation)</th>
+                <th colspan="3" class="divider">কৃষি যন্ত্রপাতি (Agri Equip)</th>
+                <th colspan="3" class="divider">বীজ (Seed)</th>
+                <th colspan="3" class="divider">গুদাম (Storage)</th>
+            </tr>
+            <tr class="header-sub">
+                <th>জুন/২৫ স্থিতি</th><th>লক্ষ্য</th><th class="divider">চলতি</th>
+                <th>স্থিতি</th><th>লক্ষ্য</th><th class="divider">হার%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="branch-col">১. ফেনী</td>
+                <td>১১০৭</td><td>১৫০০</td><td class="divider">৬৮৮</td>
+                <td>৭২১.৩৮</td><td>৫০২.২৭</td><td class="divider center">২৫%</td>
+                <td>৮০.০০</td><td>৬৯.৫৬</td><td class="divider center">৮৭%</td>
+                <td>২৭.০০</td><td>১৭.৬২</td><td class="divider center">৬৫%</td>
+                <td>১০৭.০০</td><td>৮৭.১৮</td><td class="divider center">৮১%</td>
+                <td>২৭০.০০</td><td>৯২.০৯</td><td class="divider center">৩৪%</td>
+                <td>২২৫.০০</td><td>১০৫.৭২</td><td class="divider center">৪৭%</td>
+                <td>৬.০০</td><td>৬.০০</td><td class="divider center">১০০%</td>
+                <td>১১.০০</td><td>৮.৬৫</td><td class="divider center">৭৯%</td>
+                <td>১০.০০</td><td>০.৬৭</td><td class="divider center">৭%</td>
+                <td>৫.০০</td><td>২.০০</td><td class="divider center">৪০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">২. এবিহাট</td>
+                <td>২১৫০</td><td>২৮০০</td><td class="divider">২২৪২</td>
+                <td>৬৮০.৪৯</td><td>৪৫০.৪২</td><td class="divider center">২৯%</td>
+                <td>৬৪০.০০</td><td>২৯৯.২০</td><td class="divider center">৪৭%</td>
+                <td>৫৩.০০</td><td>১০.২০</td><td class="divider center">১৯%</td>
+                <td>৬৯৩.০০</td><td>৩০৯.৪০</td><td class="divider center">৪৫%</td>
+                <td>৯৫.০০</td><td>৮.০০</td><td class="divider center">৮%</td>
+                <td>৮০.০০</td><td>৬০.০০</td><td class="divider center">৭৫%</td>
+                <td>৩.০০</td><td>৩.০০</td><td class="divider center">১০০%</td>
+                <td>১০.০০</td><td>০.৫৫</td><td class="divider center">৬%</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৩. ফাজিলপুর</td>
+                <td>২১৬৫</td><td>২৬০০</td><td class="divider">৭১৫</td>
+                <td>৭২২.৭৫</td><td>৪৯৯.৫৪</td><td class="divider center">২৪%</td>
+                <td>৫০৫.০০</td><td>২১৬.৭০</td><td class="divider center">৪৩%</td>
+                <td>১০১.০০</td><td>২৫.৯৫</td><td class="divider center">২৬%</td>
+                <td>৬০৬.০০</td><td>২৪২.৬৫</td><td class="divider center">৪০%</td>
+                <td>৬৫.০০</td><td>৪৯.৬৩</td><td class="divider center">৭৬%</td>
+                <td>১৬৫.০০</td><td>১৩৫.৬৫</td><td class="divider center">৮২%</td>
+                <td>৫.০০</td><td>৪.০০</td><td class="divider center">৮০%</td>
+                <td>৭.০০</td><td>৬.০০</td><td class="divider center">৮৬%</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>৫.০০</td><td>৩.০০</td><td class="divider center">৬০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৪. মুক্তবাজার</td>
+                <td>১৩০৫</td><td>২০০০</td><td class="divider">৭৬০</td>
+                <td>১২৪০</td><td>২৬৫.০০</td><td class="divider center">২০%</td>
+                <td>১৫৫.৯১</td><td>৫৯.০০</td><td class="divider center">৯৯%</td>
+                <td>৯৯.০০</td><td>৩১.৬৮</td><td class="divider center">৩২%</td>
+                <td>৩৬৪.০০</td><td>১৮৭.৫৯</td><td class="divider center">৫২%</td>
+                <td>১১৫.০০</td><td>৪৭.৭৫</td><td class="divider center">৪২%</td>
+                <td>১৭০.০০</td><td>৩৯.৭০</td><td class="divider center">২৩%</td>
+                <td>১০.০০</td><td>১০.০০</td><td class="divider center">১০০%</td>
+                <td>৭.০০</td><td>৭.০০</td><td class="divider center">১০০%</td>
+                <td>৫.০০</td><td>৫.০০</td><td class="divider center">১০০%</td>
+                <td>৫.০০</td><td>০.০০</td><td class="divider center">০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৫. ছাগলনাইয়া</td>
+                <td>২৭৫০</td><td>৩৫০০</td><td class="divider">৬৯৭</td>
+                <td>৬৭৯.২৯</td><td>৪৭৩.২৩</td><td class="divider center">২২%</td>
+                <td>৭১০.০০</td><td>২১৮.৬৪</td><td class="divider center">৩১%</td>
+                <td>৬৮.০০</td><td>১৭.১১</td><td class="divider center">২৫%</td>
+                <td>৭৭৮.০০</td><td>২৩৫.৭৫</td><td class="divider center">৩০%</td>
+                <td>৩৫.০০</td><td>৩৭.৫০</td><td class="divider center">১০৭%</td>
+                <td>১৯০.০০</td><td>১১৮.৪৫</td><td class="divider center">৬২%</td>
+                <td>৫.০০</td><td>৩.০০</td><td class="divider center">৬০%</td>
+                <td>১০.০০</td><td>৬.০০</td><td class="divider center">৬০%</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>৫.০০</td><td>০.০০</td><td class="divider center">০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৬. কুহুমা</td>
+                <td>১০৬৬</td><td>১৪০০</td><td class="divider">৩৩৬</td>
+                <td>৩০৫.৯৮</td><td>২১২.৫৭</td><td class="divider center">২৬%</td>
+                <td>৩৮০.০০</td><td>১৮৯.০৫</td><td class="divider center">৫০%</td>
+                <td>৩.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৩৮৩.০০</td><td>১৮৯.০৫</td><td class="divider center">৪৯%</td>
+                <td>২৫.০০</td><td>১৮.৬৫</td><td class="divider center">৭৫%</td>
+                <td>১০৫.০০</td><td>৯০.৩৩</td><td class="divider center">৮৬%</td>
+                <td>৬.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৭. শুভপুর</td>
+                <td>২২৭৮</td><td>২৯০০</td><td class="divider">৩৩৫</td>
+                <td>৫১৫.০১</td><td>৩৮৮.৮০</td><td class="divider center">৩২%</td>
+                <td>৫০০.০০</td><td>২১৭.৭৬</td><td class="divider center">৪৪%</td>
+                <td>৭১.০০</td><td>২০.৯৯</td><td class="divider center">৩০%</td>
+                <td>৫৭১.০০</td><td>২৩৮.৭৫</td><td class="divider center">৪২%</td>
+                <td>৫৫.০০</td><td>৫.৩০</td><td class="divider center">১০%</td>
+                <td>৫০.০০</td><td>৮.৪২</td><td class="divider center">১৭%</td>
+                <td>২.০০</td><td>০.৯০</td><td class="divider center">৪৫%</td>
+                <td>৪.০০</td><td>৩.৩০</td><td class="divider center">৮৩%</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>৫.০০</td><td>০.০০</td><td class="divider center">০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৮. সোনাগাজী</td>
+                <td>৩০৭৪</td><td>৩৪০০</td><td class="divider">১১৮১</td>
+                <td>৬০১.১০</td><td>৩৩৯.১৫</td><td class="divider center">২৩%</td>
+                <td>৪৩৫.০০</td><td>২৪০.৮৮</td><td class="divider center">৫৫%</td>
+                <td>৮৮.০০</td><td>৩৪.৮৮</td><td class="divider center">৪০%</td>
+                <td>৫২৩.০০</td><td>২৭৫.৭৬</td><td class="divider center">৫৩%</td>
+                <td>৫৫.০০</td><td>১৬.০০</td><td class="divider center">২৯%</td>
+                <td>৮৫.০০</td><td>৫৭.৫০</td><td class="divider center">৬৮%</td>
+                <td>৭.০০</td><td>২.০০</td><td class="divider center">২৯%</td>
+                <td>১০.০০</td><td>২.২৫</td><td class="divider center">২৩%</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৯. কুটিরহাট</td>
+                <td>১৯৫০</td><td>২৬০০</td><td class="divider">৬৬০</td>
+                <td>৩৪৩.৯৭</td><td>২৫২.৮৭</td><td class="divider center">১৬%</td>
+                <td>২০৫.০০</td><td>৭৯.৬৪</td><td class="divider center">৩৯%</td>
+                <td>৩৪.০০</td><td>১১.২৮</td><td class="divider center">৩৩%</td>
+                <td>২৩৯.০০</td><td>৯০.৯২</td><td class="divider center">৩৮%</td>
+                <td>৫৫.০০</td><td>২৬.১০</td><td class="divider center">৪৭%</td>
+                <td>৯০.০০</td><td>৩৭.৫৫</td><td class="divider center">৪২%</td>
+                <td>৭.০০</td><td>০.২০</td><td class="divider center">৩%</td>
+                <td>১০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১০.০০</td><td>০.৫০</td><td class="divider center">৫%</td>
+                <td>৮.০০</td><td>০.০০</td><td class="divider center">০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১০. দাগনভূঞা</td>
+                <td>১০৪৭</td><td>১৩০০</td><td class="divider">৫৫৯</td>
+                <td>১৩৩৪.৮৪</td><td>১০৩০.৩৬</td><td class="divider center">৪৩%</td>
+                <td>১৮৮৫.০০</td><td>৪১৭.০৪</td><td class="divider center">৪৯%</td>
+                <td>২১.০০</td><td>২.৫০</td><td class="divider center">১২%</td>
+                <td>৯০৬.০০</td><td>৪১৯.৫৪</td><td class="divider center">৪৬%</td>
+                <td>৩৫.০০</td><td>৪.৭৯</td><td class="divider center">১৪%</td>
+                <td>৪৫.০০</td><td>২৪.৭০</td><td class="divider center">৫৫%</td>
+                <td>৪.০০</td><td>১.০০</td><td class="divider center">২৫%</td>
+                <td>৮.০০</td><td>১.০০</td><td class="divider center">১৩%</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১১. জায়লস্কর</td>
+                <td>৩৯৭৭</td><td>৪৯০০</td><td class="divider">৬৯১</td>
+                <td>১১৮৯.৬১</td><td>৯২১.৯৭</td><td class="divider center">৮৫%</td>
+                <td>৩৫৫.০০</td><td>১৫৫.৭৯</td><td class="divider center">৪৪%</td>
+                <td>৭৭.০০</td><td>২৭.৪৩</td><td class="divider center">৩৬%</td>
+                <td>৪৩২.০০</td><td>১৮৩.২২</td><td class="divider center">৪২%</td>
+                <td>১৩৫.০০</td><td>১৩.৫১</td><td class="divider center">১০%</td>
+                <td>১০৫.০০</td><td>২৬.৬০</td><td class="divider center">২৫%</td>
+                <td>৫.০০</td><td>৫.০০</td><td class="divider center">১০০%</td>
+                <td>১০.০০</td><td>৫.৫০</td><td class="divider center">৫৫%</td>
+                <td>১০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>২.০০</td><td>২.০০</td><td class="divider center">১০০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১২. দুধমুখা</td>
+                <td>১৭৮৫</td><td>২৩০০</td><td class="divider">৪৮২</td>
+                <td>৩৮৯.৩৭</td><td>২৪২.৫৫</td><td class="divider center">১৮%</td>
+                <td>৫১০.০০</td><td>২৬৩.৭২</td><td class="divider center">৫২%</td>
+                <td>৫৩.০০</td><td>৩.০০</td><td class="divider center">৬%</td>
+                <td>৫৬৩.০০</td><td>২৬৬.৭২</td><td class="divider center">৪৭%</td>
+                <td>১০০.০০</td><td>৩২.২৮</td><td class="divider center">৩২%</td>
+                <td>৬৫.০০</td><td>৯.০০</td><td class="divider center">১৪%</td>
+                <td>৬.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৩. কুরাইশমুন্সী</td>
+                <td>২৯০০</td><td>৩৮০০</td><td class="divider">৬৬১</td>
+                <td>৬৮৯.৩৭</td><td>৪৬৮.৫১</td><td class="divider center">২৮%</td>
+                <td>৫৩০.০০</td><td>৪৬৮.৫১</td><td class="divider center">৮৮%</td>
+                <td>৬২.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৫৯২.০০</td><td>৪৬৮.৫১</td><td class="divider center">৭৯%</td>
+                <td>১৫৫.০০</td><td>৩৩.১৭</td><td class="divider center">২১%</td>
+                <td>১৮৫.০০</td><td>৪২.৮০</td><td class="divider center">২৩%</td>
+                <td>৯.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৮.০০</td><td>০.০০</td><td class="divider center">০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৪. পরশুরাম</td>
+                <td>২৯৯৯</td><td>৩৮০০</td><td class="divider">৬৭২</td>
+                <td>১০১৬.৩৬</td><td>৬৬৫.২৯</td><td class="divider center">৩৪%</td>
+                <td>৪৯৫.০০</td><td>৩৪৯.২৭</td><td class="divider center">৭১%</td>
+                <td>৬৫.০০</td><td>৪১.৩২</td><td class="divider center">৬৪%</td>
+                <td>৫৬০.০০</td><td>৩৯০.৫৯</td><td class="divider center">৭০%</td>
+                <td>৬০.০০</td><td>৪০.০০</td><td class="divider center">৬৭%</td>
+                <td>৩৫.০০</td><td>২৪.৫০</td><td class="divider center">৭০%</td>
+                <td>৫.০০</td><td>৩.৩৪</td><td class="divider center">৬৭%</td>
+                <td>১০.০০</td><td>৪.১২</td><td class="divider center">৪১%</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৫. বিএম বাজার</td>
+                <td>১৬৫২</td><td>২২০০</td><td class="divider">৩৯৭</td>
+                <td>৫৮১.১৩</td><td>৪৭৫.৪০</td><td class="divider center">৩৯%</td>
+                <td>২৭০.০০</td><td>১৪০.০৮</td><td class="divider center">৫৪%</td>
+                <td>৩৮.০০</td><td>২.৬০</td><td class="divider center">৭%</td>
+                <td>২৯৮.০০</td><td>১৪২.৬৮</td><td class="divider center">৪৮%</td>
+                <td>৫৫.০০</td><td>৩০.১৫</td><td class="divider center">৫৫%</td>
+                <td>৭৫.০০</td><td>৭৫.০০</td><td class="divider center">১০০%</td>
+                <td>৩.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৫.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>২.০০</td><td>০.০০</td><td class="divider center">০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৬. ফুলগাজী</td>
+                <td>১২৩৮</td><td>১৬০০</td><td class="divider">৬৪৭</td>
+                <td>৩৮৫.১৯</td><td>২৭৬.৩৩</td><td class="divider center">১৮%</td>
+                <td>৩১৫.০০</td><td>১১৩.১৭</td><td class="divider center">৩৬%</td>
+                <td>১৮.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৩৩৩.০০</td><td>১১৩.১৭</td><td class="divider center">৩৪%</td>
+                <td>৫০.০০</td><td>১৫.৯৮</td><td class="divider center">৩২%</td>
+                <td>১৩০.০০</td><td>১২৯.৫০</td><td class="divider center">১০০%</td>
+                <td>৭.০০</td><td>১.৩০</td><td class="divider center">১৯%</td>
+                <td>১০.০০</td><td>৫.৮৫</td><td class="divider center">৫৯%</td>
+                <td>৫.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>২.০০</td><td>০.০০</td><td class="divider center">০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৭. জিএমহাট</td>
+                <td>১৬৭১</td><td>২২০০</td><td class="divider">৩৫৮</td>
+                <td>৪০৮.৭৭</td><td>২৮৮.৪২</td><td class="divider center">২৪%</td>
+                <td>৩৩০.০০</td><td>২৫৩.৩০</td><td class="divider center">৭৭%</td>
+                <td>২২.০০</td><td>৬.৯৭</td><td class="divider center">৩২%</td>
+                <td>৩৫২.০০</td><td>২৬০.২৭</td><td class="divider center">৭৪%</td>
+                <td>৬০.০০</td><td>৩৬.০০</td><td class="divider center">৬০%</td>
+                <td>৬৫.০০</td><td>৬৪.৮৪</td><td class="divider center">১০০%</td>
+                <td>৭.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৪.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>২.০০</td><td>০.০০</td><td class="divider center">০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৮. আমজাদহাট</td>
+                <td>১৬১২</td><td>২২০০</td><td class="divider">৫০০</td>
+                <td>৪৬০.০৯</td><td>৩১২.৭৬</td><td class="divider center">১৮%</td>
+                <td>৬০০.০০</td><td>২৩৮.১২</td><td class="divider center">৪০%</td>
+                <td>১০০.০০</td><td>৬১.৭০</td><td class="divider center">৬২%</td>
+                <td>৭০০.০০</td><td>২৯৯.৮২</td><td class="divider center">৪৩%</td>
+                <td>৮০.০০</td><td>৫৮.০০</td><td class="divider center">৭৩%</td>
+                <td>১৩৫.০০</td><td>১০০.০০</td><td class="divider center">৯৮%</td>
+                <td>৩.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৪.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>০.০০</td><td>০.০০</td><td class="divider center">-</td>
+                <td>১.০০</td><td>০.০০</td><td class="divider center">০%</td>
+            </tr>
+            <tr class="total-row">
+                <td class="branch-col">মোট ৪</td>
+                <td>৩৬৭২৬</td><td>৪১০০০</td><td class="divider">১০৮০৩</td>
+                <td>১২০১০.৩৬</td><td>৮৩৬৪.২০</td><td class="divider center">২৭%</td>
+                <td>৮৮০০.০০</td><td>৪০৮৬.৩৪</td><td class="divider center">৫১%</td>
+                <td>১০০০.০০</td><td>৩১৫.২৩</td><td class="divider center">৩২%</td>
+                <td>৯০০০.০০</td><td>৪৪০১.৫৭</td><td class="divider center">৪৯%</td>
+                <td>১৫০০.০০</td><td>৫৬৪.৯০</td><td class="divider center">৩৮%</td>
+                <td>২০০০.০০</td><td>১১৫০.২৬</td><td class="divider center">৫৮%</td>
+                <td>১০০.০০</td><td>৩৯.৭৪</td><td class="divider center">৪০%</td>
+                <td>১৫০.০০</td><td>৫০.২২</td><td class="divider center">৩৩%</td>
+                <td>৫০.০০</td><td>৬.১৭</td><td class="divider center">১২%</td>
+                <td>৫০.০০</td><td>৭.০০</td><td class="divider center">১৪%</td>
+            </tr>
+            <tr class="crore-row">
+                <td class="branch-col">কোটি টাকায়</td>
+                <td>-</td><td>-</td><td class="divider">-</td>
+                <td>১২০.১০</td><td>৮৩.৬৪</td><td class="divider center"></td>
+                <td>৮৮.০০</td><td>৪০.৮৬</td><td class="divider center"></td>
+                <td>১০.০০</td><td>৩.১৫</td><td class="divider center"></td>
+                <td>৯০.০০</td><td>৪৪.০২</td><td class="divider center"></td>
+                <td>১৫.০০</td><td>৫.৬৫</td><td class="divider center"></td>
+                <td>২০.০০</td><td>১১.৫০</td><td class="divider center"></td>
+                <td>১.০০</td><td>০.৪০</td><td class="divider center"></td>
+                <td>১.৫০</td><td>০.৫০</td><td class="divider center"></td>
+                <td>০.৫০</td><td>০.০৬</td><td class="divider center"></td>
+                <td>০.৫০</td><td>০.০৭</td><td class="divider center"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section-title">পর্ব ৩: বিশেষ ঋণ, এসএমই, মোট ঋণ বিতরণ ও অনুপাত (Part 3: Special Loans, SME, Disbursement & Ratios)</div>
+<div class="table-wrapper">
+    <table>
+        <thead>
+            <tr class="header-main">
+                <th rowspan="2" class="branch-col">শাখার নাম<br>(Branch Name)</th>
+                <th colspan="3" class="divider">দারিদ্র বিমোচন (Poverty Alleviation)</th>
+                <th colspan="3" class="divider">অন্যান্য ঋণ (Other Loans)</th>
+                <th colspan="3" class="divider">মোট কৃষি ঋণ (Total Agri Loan)</th>
+                <th colspan="3" class="divider">এসএমই (SME)</th>
+                <th colspan="3" class="divider">কৃষিভিত্তিক শিল্প (Agro Industry)</th>
+                <th colspan="3" class="divider">সর্বমোট ঋণ বিতরণ (Total Disbursement)</th>
+                <th colspan="1" class="divider">৪% ডাল/তৈলবীজ</th>
+                <th colspan="1" class="divider">উচ্চসুদবাহ</th>
+                <th colspan="3">আমানত ও ঋণ অনুপাত (Deposit/Loan Ratio)</th>
+            </tr>
+            <tr class="header-sub">
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th>লক্ষ্য</th><th>অর্জন</th><th class="divider">%</th>
+                <th class="divider">অর্জন</th>
+                <th class="divider">সংখ্যা</th>
+                <th>আমানত</th><th>ঋণ স্থিতি</th><th>রেসিও %</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="branch-col">১. ফেনী</td>
+                <td>৬০.০০</td><td>৫.০০</td><td class="divider center">৮%</td>
+                <td>২৪০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৯৩৪.০০</td><td>৩০৭.৩১</td><td class="divider center">৩৩%</td>
+                <td>১৪৯০.০০</td><td>৪২১.০০</td><td class="divider center">২৮%</td>
+                <td>৫৩৪.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>২৯৫৮.০০</td><td>৭২৮.৩১</td><td class="divider center">২৫%</td>
+                <td class="divider">৫.০০</td>
+                <td class="divider">৮</td>
+                <td>৮৩৪.২৩</td><td>১১০৫.৯২</td><td class="center">৭০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">২. এবিহাট</td>
+                <td>২০.০০</td><td>০.৭৫</td><td class="divider center">৪%</td>
+                <td>৪০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৯৪১.০০</td><td>৩৮১.৭০</td><td class="divider center">৪১%</td>
+                <td>৩২৫.০০</td><td>১২৩.০০</td><td class="divider center">৩৮%</td>
+                <td>৩৫.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১৩০১.০০</td><td>৫০৪.৭০</td><td class="divider center">৩৯%</td>
+                <td class="divider">৫.০০</td>
+                <td class="divider">৩</td>
+                <td>৪৮২.৪৬</td><td>৮২২.২৪</td><td class="center">৫৯%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৩. ফাজিলপুর</td>
+                <td>৫০.০০</td><td>১৫.০০</td><td class="divider center">৩০%</td>
+                <td>৫০.০০</td><td>২৭.৭৫</td><td class="divider center">৫৬%</td>
+                <td>৯৫৩.০০</td><td>৪৮৩.৬৮</td><td class="divider center">৫১%</td>
+                <td>৬২৫.০০</td><td>৩১৮.৭০</td><td class="divider center">৫১%</td>
+                <td>৩৫.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১৬১৩.০০</td><td>৮০২.৩৮</td><td class="divider center">৫০%</td>
+                <td class="divider">৫.০০</td>
+                <td class="divider">৫</td>
+                <td>৬৫৪.৯৯</td><td>৭৫২.৮২</td><td class="center">৮৭%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৪. মুক্তবাজার</td>
+                <td>১৫.০০</td><td>১২.০০</td><td class="divider center">৮০%</td>
+                <td>২৪০.০০</td><td>১৭.০০</td><td class="divider center">৭%</td>
+                <td>৯৩১.০০</td><td>৩২৬.০৪</td><td class="divider center">৩৫%</td>
+                <td>১৩৭০.০০</td><td>৩০২.০০</td><td class="divider center">২২%</td>
+                <td>২৩৫.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>২৫৩৬.০০</td><td>৬২৮.০৪</td><td class="divider center">২৫%</td>
+                <td class="divider">৫.০০</td>
+                <td class="divider">৩</td>
+                <td>১৪৭.৩৯</td><td>৬৯৬.৯৮</td><td class="center">২১%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৫. ছাগলনাইয়া</td>
+                <td>৪৩.০০</td><td>২.০০</td><td class="divider center">৫%</td>
+                <td>৪০.০০</td><td>২৮.৪০</td><td class="divider center">৭১%</td>
+                <td>১১০৬.০০</td><td>৪৩১.১০</td><td class="divider center">৩৯%</td>
+                <td>৯৭৫.০০</td><td>২২১.০০</td><td class="divider center">২৩%</td>
+                <td>৩৩০.০০</td><td>১০.০০</td><td class="divider center">৩%</td>
+                <td>২৪১১.০০</td><td>৬৬২.১০</td><td class="divider center">২৭%</td>
+                <td class="divider">৫.০০</td>
+                <td class="divider">৮</td>
+                <td>৬৯১.৬৯</td><td>১১৮৫.৯২</td><td class="center">৫৮%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৬. কুহুমা</td>
+                <td>৪৫.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৪০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৬১৪.০০</td><td>২৯৮.০৩</td><td class="divider center">৪৯%</td>
+                <td>৩২০.০০</td><td>৬৩.০০</td><td class="divider center">২০%</td>
+                <td>৪০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৯৭৪.০০</td><td>৩৬১.০৩</td><td class="divider center">৩৭%</td>
+                <td class="divider">০.০০</td>
+                <td class="divider">২</td>
+                <td>৬৩.৬৫</td><td>৪২১.৭৭</td><td class="center">১৫%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৮. সোনাগাজী</td>
+                <td>৪০.০০</td><td>৪.০০</td><td class="divider center">১০%</td>
+                <td>৪০.০০</td><td>৮.৪০</td><td class="divider center">২১%</td>
+                <td>৭৬৭.০০</td><td>২৬৯.০৭</td><td class="divider center">৩৫%</td>
+                <td>৩৫৫.০০</td><td>৯৪.০০</td><td class="divider center">২৬%</td>
+                <td>৪০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১১৬২.০০</td><td>৩৬৩.০৭</td><td class="divider center">৩১%</td>
+                <td class="divider">৫.০০</td>
+                <td class="divider">৫</td>
+                <td>৩৫৯.৭৩</td><td>১২৮৯.৯৪</td><td class="center">২৮%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">৯. কুটিরহাট</td>
+                <td>১০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৪০.০০</td><td>৩০.১২</td><td class="divider center">৭৫%</td>
+                <td>১০৭৯.০০</td><td>৫৭৪.৬০</td><td class="divider center">৫৩%</td>
+                <td>৯৮০.০০</td><td>৫৪৪.১৫</td><td class="divider center">৫৬%</td>
+                <td>৩২৫.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>২৩৮৪.০০</td><td>১১০৮.৭৫</td><td class="divider center">৪৭%</td>
+                <td class="divider">৩.৩৪</td>
+                <td class="divider">৩</td>
+                <td>২৪.৫৩</td><td>৫৮৮.০৮</td><td class="center">৪%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১০. দাগনভূঞা</td>
+                <td>২০.০০</td><td>৬.০০</td><td class="divider center">৩০%</td>
+                <td>৪০.০০</td><td>৪.০০</td><td class="divider center">১০%</td>
+                <td>৭৪০.০০</td><td>৩৬৩.৫১</td><td class="divider center">৪৯%</td>
+                <td>৫৪০.০০</td><td>২৪৬.৫০</td><td class="divider center">৪৬%</td>
+                <td>৪০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১৩২০.০০</td><td>৬১০.০১</td><td class="divider center">৪৬%</td>
+                <td>১৮০.০০</td><td>২৫.৩৩</td><td class="divider center">১৪%</td>
+                <td class="divider">৩</td>
+                <td class="divider">১</td>
+                <td>৩৩৩.৫০</td><td>৮১৯.৫০</td><td class="center">৪১%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১১. জায়লস্কর</td>
+                <td>২০.০০</td><td>৯.৫০</td><td class="divider center">৪৮%</td>
+                <td>১৮০.০০</td><td>২৫.৩৩</td><td class="divider center">১৪%</td>
+                <td>৬১৯.০০</td><td>১৯০.১০</td><td class="divider center">৩১%</td>
+                <td>১১৫০.০০</td><td>৩০৩.৫০</td><td class="divider center">২৬%</td>
+                <td>২০০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১৯৬৯.০০</td><td>৪৯৩.৬০</td><td class="divider center">২৫%</td>
+                <td class="divider">০.০০</td>
+                <td class="divider">০</td>
+                <td>১৩৩.০৫</td><td>৪৫৩.৩৭</td><td class="center">২৯%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১২. দুধমুখা</td>
+                <td>২০.০০</td><td>০.৫০</td><td class="divider center">৩%</td>
+                <td>১০.০০</td><td>৬.৫০</td><td class="divider center">৬৫%</td>
+                <td>১০২৮.০০</td><td>৪৫৮.০৩</td><td class="divider center">৪৫%</td>
+                <td>৬১৫.০০</td><td>২১২.০০</td><td class="divider center">৩৪%</td>
+                <td>৩৬.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১৬৭৯.০০</td><td>৬৭০.০৩</td><td class="divider center">৪০%</td>
+                <td class="divider">০.০০</td>
+                <td class="divider">০</td>
+                <td>৩৭১.৯৫</td><td>৭৯২.৮০</td><td class="center">৪৭%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৩. কুরাইশমুন্সী</td>
+                <td>২০.০০</td><td>৬.২০</td><td class="divider center">৩১%</td>
+                <td>৪০.০০</td><td>২২.৮০</td><td class="divider center">৫৭%</td>
+                <td>৮০৪.০০</td><td>৩৩৭.০০</td><td class="divider center">৪২%</td>
+                <td>৪৩০.০০</td><td>১৬৫.০০</td><td class="divider center">৩৮%</td>
+                <td>২০.০০</td><td>৩.০০</td><td class="divider center">১৫%</td>
+                <td>১২৫৪.০০</td><td>৫০৫.০০</td><td class="divider center">৪০%</td>
+                <td class="divider">০.০০</td>
+                <td class="divider">০</td>
+                <td>৪৭৮.১২</td><td>৪৯১.১১</td><td class="center">৯৭%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৪. পরশুরাম</td>
+                <td>৭.০০</td><td>৪.৫০</td><td class="divider center">৬৪%</td>
+                <td>৪০.০০</td><td>২০.৭৪</td><td class="divider center">৫২%</td>
+                <td>৭১৭.০০</td><td>৪৮৭.৭৯</td><td class="divider center">৬৮%</td>
+                <td>৫৯৫.০০</td><td>২২০.০০</td><td class="divider center">৩৭%</td>
+                <td>২০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১৩৩২.০০</td><td>৭০৭.৭৯</td><td class="divider center">৫৩%</td>
+                <td class="divider">৫.০০</td>
+                <td class="divider">১</td>
+                <td>২২৯.৬৭</td><td>৭৭১.৮২</td><td class="center">৩০%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৫. বিএম বাজার</td>
+                <td>৬০.০০</td><td>৬.০০</td><td class="divider center">১০%</td>
+                <td>৩৩০.০০</td><td>২০.৩০</td><td class="divider center">৬%</td>
+                <td>১০৮৯.০০</td><td>২৬২.১৩</td><td class="divider center">২৪%</td>
+                <td>৯১০.০০</td><td>৬০৯.০০</td><td class="divider center">৬৭%</td>
+                <td>২০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>২০১৯.০০</td><td>৮৭১.১৩</td><td class="divider center">৪৩%</td>
+                <td class="divider">৫.০০</td>
+                <td class="divider">০</td>
+                <td>২৭৬.৪৬</td><td>৫৯৫.৬৭</td><td class="center">৪৬%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৬. ফুলগাজী</td>
+                <td>২০.০০</td><td>২০.৪৯</td><td class="divider center">১০২%</td>
+                <td>৪০.০০</td><td>১০.৫৫</td><td class="divider center">২৬%</td>
+                <td>৪৯৮.০০</td><td>২৭৮.৮৭</td><td class="divider center">৫৬%</td>
+                <td>৪৩০.০০</td><td>১৭৪.৫০</td><td class="divider center">৪১%</td>
+                <td>২০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৯৪৮.০০</td><td>৪৫৩.৩৭</td><td class="divider center">৪৮%</td>
+                <td>৫.০০</td><td>১</td><td>১১২.৬৯</td><td>৮১৯.০০</td><td class="center">১৩%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৭. জিএমহাট</td>
+                <td>৪০.০০</td><td>৫.০০</td><td class="divider center">১৩%</td>
+                <td>৪০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৬১৭.০০</td><td>২৭০.৮০</td><td class="divider center">৪৪%</td>
+                <td>৯৩০.০০</td><td>৫২২.০০</td><td class="divider center">৫৬%</td>
+                <td>২৫.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১৫৭২.০০</td><td>৭৯২.৮০</td><td class="divider center">৫০%</td>
+                <td class="divider">৫.০০</td>
+                <td class="divider">০</td>
+                <td>৩৪০.৬৮</td><td>৬২০.৭৩</td><td class="center">৫৫%</td>
+            </tr>
+            <tr>
+                <td class="branch-col">১৮. আমজাদহাট</td>
+                <td>২০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৪০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>৫৫০.০০</td><td>৩৬১.১১</td><td class="divider center">৬৬%</td>
+                <td>৪৪০.০০</td><td>১৩০.০০</td><td class="divider center">৩০%</td>
+                <td>২০.০০</td><td>০.০০</td><td class="divider center">০%</td>
+                <td>১০১০.০০</td><td>৪৯১.১১</td><td class="divider center">৪৯%</td>
+                <td class="divider">৫.০০</td>
+                <td class="divider">০</td>
+                <td>৪০৯.৩৫</td><td>৪৫৩.৩৭</td><td class="center">৯০%</td>
+            </tr>
+            <tr class="total-row">
+                <td class="branch-col">মোট ৪</td>
+                <td>৬০০.০০</td><td>৯৬.৯৪</td><td class="divider center">১৬%</td>
+                <td>১৫৫০.০০</td><td>২২১.৮৯</td><td class="divider center">১৪%</td>
+                <td>১৫০০০.০০</td><td>৬৫৩৮.৬৯</td><td class="divider center">৪৪%</td>
+                <td>১০০০০.০০</td><td>৪৯৮৩.৩৫</td><td class="divider center">৫০%</td>
+                <td>২০০০.০০</td><td>১৩.০০</td><td class="divider center">১%</td>
+                <td>৩০০০০.০০</td><td>১১৫৩৫.০৪</td><td class="divider center">৩৮%</td>
+                <td class="divider">৬০.০০</td>
+                <td class="divider">৫২</td>
+                <td>-</td><td>-</td><td class="center">-</td>
+            </tr>
+            <tr class="crore-row">
+                <td class="branch-col">কোটি টাকায়</td>
+                <td>৬.০০</td><td>০.৯৭</td><td class="divider center">-</td>
+                <td>১৫.৫০</td><td>২.২২</td><td class="divider center">-</td>
+                <td>১৫০.০০</td><td>৬৫.৩৯</td><td class="divider center">-</td>
+                <td>১০০.০০</td><td>৪৯.৮৩</td><td class="divider center">-</td>
+                <td>২০.০০</td><td>০.১৩</td><td class="divider center">-</td>
+                <td>৩০০.০০</td><td>১১৫.৩৫</td><td class="divider center">-</td>
+                <td class="divider">-</td>
+                <td class="divider">-</td>
+                <td>-</td><td>-</td><td class="center">-</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
