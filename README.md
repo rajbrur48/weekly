@@ -1,61 +1,53 @@
-# weekly
-weekly 
-প্রদত্ত Bulletin _31.12.2025(27th Week).pdf ফাইলটি বিশ্লেষণ করে, বাংলাদেশ কৃষি ব্যাংক (বিকেবি)-এর সাপ্তাহিক পজিশন বা স্টেটমেন্ট ম্যানেজমেন্টের জন্য একটি পূর্ণাঙ্গ মোবাইল অ্যাপ কনসেপ্ট নিচে দেওয়া হলো।
-এই অ্যাপটির নাম হতে পারে "BKB Smart Bulletin" বা "AgriBank Weekly Manager"।
-১. অ্যাপের মূল ধারণা (Core Concept)
-এই অ্যাপটি মূলত একটি Data Aggregation & Reporting System। এটি বিকেবি-এর আঞ্চলিক কার্যালয় (Regional Office) এবং শাখাগুলোর (Branches) মধ্যে সেতুবন্ধন হিসেবে কাজ করবে। শাখা ব্যবস্থাপকরা তাদের সাপ্তাহিক ডাটা ইনপুট দেবেন এবং অ্যাপটি অটোমেটিক ক্যালকুলেশন করে পিডিএফ-এর মতো হুবহু রিপোর্ট জেনারেট করবে।
-২. ইউজার রোল ও পারমিশন (User Roles)
-অ্যাপটিতে প্রধানত দুটি রোল থাকবে:
- * Branch Manager (User): নিজ শাখার ডাটা এন্ট্রি, এডিট এবং প্রিভিউ করতে পারবেন।
- * Regional Admin (Super User): সকল শাখার ডাটা মনিটর করতে পারবেন, ফাইনাল রিপোর্ট জেনারেট করতে পারবেন এবং পিডিএফ ডাউনলোড করতে পারবেন।
-৩. অ্যাপের ফিচারসমূহ (App Features)
-ক. ড্যাশবোর্ড (Dashboard)
-অ্যাপ ওপেন করলেই একটি ড্যাশবোর্ড দেখা যাবে যেখানে থাকবে:
- * Total Deposit & Loan: অঞ্চলের মোট আমানত ও ঋণ বিতরণের বর্তমান স্থিতি।
- * Recovery Status: ঋণ আদায়ের হার (গ্রাফ বা চার্ট আকারে)।
- * Top Performing Branch: সপ্তাহের সেরা পারফর্ম করা শাখার নাম।
-খ. ডাটা এন্ট্রি মডিউল (Data Entry Module - Branch Wise)
-প্রতিটি শাখার জন্য আলাদা ফর্ম থাকবে। পিডিএফ ফাইলের কলাম অনুযায়ী ইনপুট ফিল্ডগুলো ৪টি প্রধান ট্যাবে ভাগ করা থাকবে:
- * ট্যাব ১: আমানত (Deposit):
-   * লক্ষ্যমাত্রা (অটোমেটিক লোড হবে), অর্জন (ইনপুট), আমানত স্থিতি, নতুন হিসাব খোলা, স্কিম ইত্যাদি।
- * ট্যাব ২: ঋণ বিতরণ (Loan Disbursement):
-   * খাতওয়ারী ইনপুট (শস্য, মৎস্য, এসএমই, কৃষি যন্ত্রপাতি ইত্যাদি)।
-   * লক্ষ্যমাত্রা vs অর্জন।
- * ট্যাব ৩: ঋণ আদায় (Recovery):
-   * শ্রেণীবিন্যাসিত ঋণ (Classified Loan - CL) আদায়ের তথ্য।
-   * ডব্লিউ সিএল (WCL-1, 2, 3, 4), এনসিএল (NCL), এবং নিয়মিত ঋণ আদায়।
- * ট্যাব ৪: বিবিধ (Others):
-   * ঋণ গ্রহীতার সংখ্যা, মামলা, অডিট আপত্তি, বা অন্যান্য তথ্য।
-গ. অটোমেটিক ক্যালকুলেশন ইঞ্জিন (Auto-Calculation Engine)
-ব্যবহারকারী শুধু অর্জনের সংখ্যা (Achievement Figure) ইনপুট দেবেন। অ্যাপ বাকি সব অটোমেটিক করবে:
- * শতকরা হার (%) বের করা।
- * লক্ষ্যমাত্রার সাথে তুলনা (কম/বেশি)।
- * গত বছরের একই সময়ের সাথে তুলনা (Growth/Decline)।
- * "কোটি টাকায়" কনভার্সন: নিচ দিয়ে অটোমেটিক সামারি তৈরি হবে।
-ঘ. হুবহু রিপোর্ট জেনারেশন (Exact Report Generation)
-এটি অ্যাপের সবচেয়ে গুরুত্বপূর্ণ ফিচার।
- * পিডিএফ জেনারেটর: ইনপুট দেওয়ার পর অ্যাপটি পিডিএফ লাইব্রেরি ব্যবহার করে হুবহু আপনার আপলোড করা ফাইলের ফরম্যাটে (ল্যান্ডস্কেপ মোডে টেবিল আকারে) রিপোর্ট তৈরি করবে।
- * এক্সেল এক্সপোর্ট: ডাটাগুলো এক্সেলেও ডাউনলোড করা যাবে।
-ঙ. প্রি-লোডেড ডাটা (Pre-loaded Default Data)
-আপনার রিকোয়ারমেন্ট অনুযায়ী, অ্যাপটিতে ডিফল্ট ডাটাবেস হিসেবে ৩১.১২.২০২৫-এর ডাটাগুলো (ফেনী, এবিহাট, ফাজিলপুর... মোট ১৮টি শাখা) লোড করা থাকবে। ইউজার চাইলে এগুলো এডিট করতে পারবেন অথবা নতুন সপ্তাহের জন্য "ক্লোন" বা কপি করে আপডেট করতে পারবেন।
-৪. টেকনিক্যাল আর্কিটেকচার (Technical Stack)
-যেহেতু আপনি Flutter এবং Node.js নিয়ে কাজ করেন, তাই এই স্ট্যাকটি সেরা হবে:
- * Mobile App (Frontend): Flutter (Android & iOS)।
-   * ডাটা টেবিল দেখানোর জন্য: data_table_2 বা syncfusion_flutter_datagrid প্যাকেজ।
-   * পিডিএফ জেনারেট করার জন্য: pdf প্যাকেজ (খুবই শক্তিশালী কাস্টম লেআউটের জন্য)।
- * Backend: Node.js (Express.js)।
- * Database: MySQL বা PostgreSQL (রিলেশনাল ডাটাবেস এই ধরনের টেবুলার ডাটার জন্য বেস্ট)।
- * State Management: Provider বা Riverpod (ডাটা রিয়েল-টাইম ক্যালকুলেশনের জন্য)।
-৫. ডাটাবেস ডিজাইন কনসেপ্ট (Database Schema)
-ডাটাগুলো সঠিকভাবে সাজানোর জন্য নিচের টেবিল স্ট্রাকচারটি ফলো করা যেতে পারে:
- * Branches Table: id, name (e.g., Feni, Ebihhat), code.
- * Weeks Table: id, week_no (e.g., 27th), date_end (31.12.2025).
- * Deposit_Data Table: branch_id, week_id, target, achievement, balance, new_accounts.
- * Loan_Data Table: branch_id, week_id, sector (Crop, SME, etc.), target, disbursement.
- * Recovery_Data Table: branch_id, week_id, wcl_1, wcl_2, ncl, cash_recovery.
-৬. অ্যাপের ওয়ার্কফ্লো (User Flow)
- * লগিন: শাখা ব্যবস্থাপক লগিন করবেন।
- * সপ্তাহ নির্বাচন: "Create New Weekly Report" এ ক্লিক করবেন অথবা "Edit Current Week" এ যাবেন।
- * ডাটা ইনপুট: তিনি তার শাখার (যেমন: সোনাগাজী) ফর্মটি ফিলাপ করবেন। আগের সপ্তাহের ডাটাগুলো রেফারেন্স হিসেবে পাশে ছোট করে দেখানো থাকবে।
- * সেভ ও সাবমিট: ডাটা সেভ করার সাথে সাথে রিজিওনাল এডমিনের কাছে নোটিফিকেশন যাবে।
- * রিপোর্ট জেনারেশন: এডমিন যখন দেখবেন ১৮টি শাখাই সাবমিট করেছে, তিনি "Generate Bulletin" বাটনে ক্লিক করবেন। অ্যাপটি সাথে সাথে ৩১.১২.২০২৫-এর পিডিএফটির মতো একটি ফাইল আউটপুট দেবে।
+# BKB Performance Manager (Weekly)
+
+A comprehensive mobile application for managing weekly performance reports for **Bangladesh Krishi Bank (BKB)** branches. Built with **Flutter** (Frontend), **PHP** (Backend), and **MySQL** (Database).
+
+## Features
+
+*   **Secure Authentication:** Branch-specific login.
+*   **Data Entry:** organized tabs for Deposits, Loans (Sector-wise), and Recovery (WCL/NCL).
+*   **Auto-Calculation:** Real-time percentage calculation.
+*   **Reporting:** Detailed scrollable table view matching official bank formats.
+*   **Export:** Generate **PDF** and **Excel (.xlsx)** reports directly from the app.
+*   **Bengali UI:** Full native language support.
+
+## Project Structure
+
+*   `weekly_app/`: Flutter Mobile Application source code.
+*   `backend/`: PHP API scripts (`login.php`, `submit_report.php`, etc.).
+*   `database/`: MySQL Schema (`schema.sql`).
+
+## Setup Instructions
+
+### 1. Database Setup
+1.  Create a MySQL database named `msrbmcom_weekly_db` (or update `backend/db_connect.php` with your own credentials).
+2.  Import the schema:
+    ```bash
+    mysql -u [username] -p msrbmcom_weekly_db < database/schema.sql
+    ```
+
+### 2. Backend Setup
+1.  Host the `backend/` folder on a PHP-enabled server (Apache/Nginx/XAMPP).
+2.  Ensure `backend/db_connect.php` has the correct database credentials.
+3.  **Testing:** Access `http://your-server-ip/backend/get_metadata.php` in a browser. You should see a JSON response with branches.
+
+### 3. Flutter App Setup
+1.  Navigate to the app directory:
+    ```bash
+    cd weekly_app
+    ```
+2.  Install dependencies:
+    ```bash
+    flutter pub get
+    ```
+3.  **Configure API URL:**
+    *   Open `lib/services/api_service.dart`.
+    *   Update `baseUrl` to point to your PHP server (e.g., `http://192.168.1.100/backend`).
+    *   *Note: If using Android Emulator, use `http://10.0.2.2/backend`.*
+4.  Run the app:
+    ```bash
+    flutter run
+    ```
+
+## Future Roadmap
+See [IMPROVEMENTS.md](IMPROVEMENTS.md) for a detailed list of recommended security and feature enhancements.
